@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">InventarioGranoDeOro</string>
+    <string name="nombre">Nombre</string>
+    <string name="pwd">Contraseña</string>
+    <string name="iniciar">Iniciar Sesión</string>
+    <string name="scan">Escáner</string>
 </resources>
