@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Dentro de red",Toast.LENGTH_LONG).show();
                 }
 
+
             }
         });
 */
