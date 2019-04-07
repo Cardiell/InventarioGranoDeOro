@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Usuario">
+    tools:context=".Usuario" >
+    <LinearLayout
+        android:id="@+id/LinearLayout_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical" >
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/seleccionar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/modo"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/nombreProducto"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/nombre" />
+        <Button
+            android:id="@+id/idProducto"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/idProducto" />
+        <Button
+            android:id="@+id/scanner"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/scanner" />
+        <TextView
+            android:id="@+id/Lista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lista"
+            android:layout_gravity="center"
+            android:textSize="20sp" />
+    </LinearLayout>
+</RelativeLayout>

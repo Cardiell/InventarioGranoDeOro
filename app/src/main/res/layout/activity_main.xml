@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
 
     <LinearLayout
         android:id="@+id/LinearLayout_0"
@@ -17,12 +16,13 @@
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical" >
 
+        <TextView android:id="@+id/admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/admin" />
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
@@ -31,7 +31,6 @@
             android:hint="@string/nombre"
             android:inputType="textPersonName"
             tools:ignore="Autofill" />
-
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
@@ -40,24 +39,26 @@
             android:hint="@string/pwd"
             android:inputType="textPassword"
             tools:ignore="Autofill" />
-
         <Button
             android:id="@+id/iniciar"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/iniciar"
             android:enabled="false"
             android:onClick="login" />
-
         <Space
             android:id="@+id/Space"
             android:layout_width="match_parent"
             android:layout_height="50dp" />
-
+        <TextView android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/usuario" />
         <Button
             android:id="@+id/scan"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/scan" />
     </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
