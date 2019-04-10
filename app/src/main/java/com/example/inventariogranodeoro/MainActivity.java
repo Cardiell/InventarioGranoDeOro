@@ -10,9 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
     Button btn_get;
+    String user, pass;
     Connection conectar;
     EditText username;
     EditText password;
@@ -70,6 +73,33 @@ public class MainActivity extends AppCompatActivity {
         if(password.getText().toString().contains(" ")){
             password.setError("¡No espacios por favor!");
             Toast.makeText(MainActivity.this, "¡No espacios por favor!", Toast.LENGTH_LONG).show();
+        }
+        user = username.getText().toString();
+        if(user.matches("")){ //Si campo esta vacio, agregar texto no valido
+            user = "lol";
+        }
+        pass = password.getText().toString();
+        try{ //Hacer conexion a la base de datos
+            ConexionBDClass con = new ConexionBDClass();
+            conectar = con.Conexion();
+            Statement stmt = conectar.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs; //Resultado del query se guarda aqui
+            String first = "select * from admin where [user ] = '"; //Primera parte del query
+            String second = "' and [password ] = '";
+            String last = "'"; //Ultima parte del query
+            String selectsql = first + user + second + pass + last; //Combinar texto para crear el statement
+            rs = stmt.executeQuery(selectsql); //Hacer el query
+
+            if(!rs.isBeforeFirst()){ //Si el resultado del query esta vacio
+                Toast.makeText(getApplicationContext(),"Datos incorrectos.", Toast.LENGTH_LONG).show();
+            }else{
+                Intent intent = new Intent(this, Administrador.class);
+                startActivity(intent);
+            }
+            conectar.close(); //Cerrar conexion
+        }catch(Exception e){
+            System.err.println("Got an exception!");
+            System.err.println(e.getMessage());
         }
     }
 }

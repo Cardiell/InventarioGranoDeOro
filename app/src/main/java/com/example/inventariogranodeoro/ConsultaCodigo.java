@@ -1,6 +1,6 @@
 package com.example.inventariogranodeoro;
+
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,23 +10,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-//Actividad para consultar productos por nombre
-public class ConsultaNombre extends Activity{
-    Button consultar, agregar;
+//Actividad para consultar productos por codigo
+public class ConsultaCodigo extends Activity {
+    Button consultar;
     Connection conectar;
-    ResultSet rs; //Resultado del query se guarda aqui
-    String text, disId, disNombre;
-    EditText nombre;
+    String text;
+    EditText id;
     TextView displayId, displayNombre, displayExistencia;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consulta_nombre);
-        nombre = findViewById(R.id.nProducto);
+        setContentView(R.layout.activity_consulta_codigo);
+        id = findViewById(R.id.cProducto);
         consultar = findViewById(R.id.consultar);
-        agregar = findViewById(R.id.agregar);
         displayId = findViewById(R.id.viewId);
         displayNombre = findViewById(R.id.viewNombre);
         displayExistencia = findViewById(R.id.viewExistencia);
@@ -38,26 +35,13 @@ public class ConsultaNombre extends Activity{
             }
         });
         //Seleccionador de cantidad de producto
-        final NumberPicker np = findViewById(R.id.np);
+        NumberPicker np = findViewById(R.id.np);
         np.setMinValue(1);
         np.setMaxValue(20);
         np.setWrapSelectorWheel(true);
-
-        agregar.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                String pCount = String.valueOf(np.getValue());
-                Intent intent = new Intent();
-                intent.putExtra("ID", disId);
-                intent.putExtra("NAME", disNombre);
-                intent.putExtra("COUNT", pCount);
-                setResult(RESULT_OK, intent);
-                finish();
-            }
-        });
     }
     public void consultarProducto(){
-        text = nombre.getText().toString();
+        text = id.getText().toString();
         if(text.matches("")){ //Si campo esta vacio, agregar texto no valido
             text = "lol";
         }
@@ -65,23 +49,20 @@ public class ConsultaNombre extends Activity{
             ConexionBDClass con = new ConexionBDClass();
             conectar = con.Conexion();
             Statement stmt = conectar.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            String first = "select * from Producto$ where [Nombre ] = '"; //Primera parte del query
+            ResultSet rs; //Resultado del query se guarda aqui
+            String first = "select * from Producto$ where [IdProducto ] = '"; //Primera parte del query
             String last = "'"; //Ultima parte del query
             String selectsql = first + text + last; //Combinar texto para crear el statement
             rs = stmt.executeQuery(selectsql); //Hacer el query
 
             if(!rs.isBeforeFirst()){ //Si el resultado del query esta vacio
-                agregar.setEnabled(false);
-                displayId.setText("Código: ");
-                displayNombre.setText("Nombre: ");
                 Toast.makeText(getApplicationContext(),"Producto NO disponible", Toast.LENGTH_LONG).show();
             }else{
                 rs.last(); //Apuntar al renglon del resultado
-                disId = rs.getString(1); //Guardar texto IdProducto
-                disNombre = rs.getString(2); //Guardar texto Nombre
+                String disId = rs.getString(1); //Guardar texto IdProducto
+                String disNombre = rs.getString(2); //Guardar texto Nombre
                 displayId.setText("Código: " + disId); //Desplegar IdProducto en pantalla
                 displayNombre.setText("Nombre: " + disNombre); //Desplegar Nombre en pantalla
-                agregar.setEnabled(true);
             }
             conectar.close(); //Cerrar conexion
         }catch(Exception e){

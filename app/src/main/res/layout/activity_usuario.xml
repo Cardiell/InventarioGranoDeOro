@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Usuario" >
+    tools:context=".Usuario">
     <LinearLayout
         android:id="@+id/LinearLayout_1"
         android:layout_width="match_parent"
@@ -41,12 +41,44 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/scanner" />
-        <TextView
-            android:id="@+id/Lista"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lista"
-            android:layout_gravity="center"
-            android:textSize="20sp" />
+            >
+            <TextView
+                android:id="@+id/pCode"
+                android:layout_width="140dp"
+                android:gravity="start"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/pName"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="@string/lCodigo"
+                android:layout_height="40dp" />
+            <TextView
+                android:id="@+id/pName"
+                android:layout_width="140dp"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="@string/lNombre"
+                android:layout_height="40dp" />
+            <TextView
+                android:id="@+id/pCount"
+                android:layout_width="140dp"
+                android:gravity="end"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/pName"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="@string/lExistencia"
+                android:layout_height="40dp" />
+        </RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvLista"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 </RelativeLayout>
