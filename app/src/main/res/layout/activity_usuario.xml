@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Usuario">
+    tools:context=".Activitys.UsuarioActivity">
     <LinearLayout
         android:id="@+id/LinearLayout_1"
         android:layout_width="match_parent"
@@ -24,19 +24,21 @@
             android:text="@string/modo"
             android:textSize="20sp" />
         <Button
-            android:id="@+id/nombreProducto"
+            android:id="@+id/btnNombreProducto"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/nombre" />
+            android:text="@string/nombre"
+            android:onClick="onClickNombre"/>
         <Button
-            android:id="@+id/idProducto"
+            android:id="@+id/btnIdProducto"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/idProducto" />
+            android:text="@string/idProducto"
+            android:onClick="onClickCodigo"/>
         <Button
-            android:id="@+id/scanner"
+            android:id="@+id/btnScanner"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

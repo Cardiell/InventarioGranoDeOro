@@ -13,11 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConsultaCodigo"></activity>
-        <activity android:name=".Administrador" />
-        <activity android:name=".ConsultaNombre" />
-        <activity android:name=".Usuario" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activitys.ConsultaCodigoActivity"></activity>
+        <activity android:name=".Activitys.AdministradorActivity" />
+        <activity android:name=".Activitys.ConsultaNombreActivity" />
+        <activity android:name=".Activitys.UsuarioActivity" />
+        <activity android:name=".Activitys.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

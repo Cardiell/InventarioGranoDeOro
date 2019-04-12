@@ -13,9 +13,8 @@ public class Lista extends RecyclerView.Adapter<Lista.MyViewHolder> {
     private ArrayList<String> producto = new ArrayList<String>();
     private ArrayList<String> cantidad = new ArrayList<String>();
 
-    public Lista(){
+    public Lista(){ }
 
-    }
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i){
