@@ -3,13 +3,11 @@ package com.example.inventariogranodeoro.Activitys;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-
-import com.example.inventariogranodeoro.Activitys.ConsultaCodigoActivity;
-import com.example.inventariogranodeoro.Activitys.ConsultaNombreActivity;
 import com.example.inventariogranodeoro.Lista;
 import com.example.inventariogranodeoro.R;
 
@@ -22,8 +20,7 @@ import com.example.inventariogranodeoro.R;
  *   CONSULTA SCANNER                                 *
  *                                                    *
  ******************************************************/
-public class UsuarioActivity extends Activity {
-
+public class UsuarioActivity extends AppCompatActivity {
 
     private Lista lista;
     private RecyclerView.LayoutManager layoutManager;
@@ -35,18 +32,8 @@ public class UsuarioActivity extends Activity {
         initComponents();
     }
 
-    public void onClickNombre(View view){
-        Intent intent = new Intent(this, ConsultaNombreActivity.class);
-        startActivityForResult(intent, 1);
-    }
-
-    public void onClickCodigo(View view){
-        Intent intent = new Intent(this, ConsultaCodigoActivity.class);
-        startActivity(intent);
-    }
-
     private void initComponents(){
-        lista = new Lista();
+        lista =   new Lista();
         recyclerView = findViewById(R.id.rvLista);
         recyclerView.setHasFixedSize(true);
         // use a linear layout manager
@@ -70,8 +57,26 @@ public class UsuarioActivity extends Activity {
         }
     }
 
+    public void onClickNombre(View view){
+        Intent intent = new Intent(this, ConsultaNombreActivity.class);
+        startActivityForResult(intent, 1);
+    }
+
+    public void onClickCodigo(View view){
+        Intent intent = new Intent(this, ConsultaCodigoActivity.class);
+        startActivityForResult(intent, 1);
+    }
+
+    public void onClickScanner(View view) {
+        Intent intent = new Intent(this,ConsultaScannerActivity.class);
+        startActivityForResult(intent, 1);
+    }
+
+
     private Button btnNombre;
     private Button btnCodigo;
     private Button btnScan;
     private RecyclerView recyclerView;
+
+
 }

@@ -69,6 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/agregar"
-            android:enabled="false" />
+            android:enabled="false"
+            android:onClick="onClickAgregar"/>
     </LinearLayout>
 </RelativeLayout>

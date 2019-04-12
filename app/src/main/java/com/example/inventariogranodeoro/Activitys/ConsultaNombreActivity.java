@@ -21,7 +21,6 @@ import com.example.inventariogranodeoro.R;
  ******************************************************/
 public class ConsultaNombreActivity extends Activity{
 
-
     String text;
     ArticuloDAO consultaNombre;
     Articulo articulo;
@@ -36,29 +35,30 @@ public class ConsultaNombreActivity extends Activity{
 
     public void onClickConsultar(View view) {
         text = edtNombre.getText().toString();
-        if(text.matches("")){ //Si campo esta vacio, agregar texto no valido
+        if(text.matches("")){                                           //Si campo esta vacio, agregar texto no valido
             text = "lol";
         }
         articulo = consultaNombre.consultaNombre(text);
-            if(articulo == null){ //Si el resultado del query esta vacio
+            if(articulo == null){                                             //Si el resultado del query esta vacio
                 btnAgregar.setEnabled(false);
                 txtId.setText("Código: ");
                 txtNombre.setText("Nombre: ");
-                Toast.makeText(getApplicationContext(),"Producto NO disponible", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"El articulo: "+text+"\nNo esta disponible", Toast.LENGTH_LONG).show();
             }else{
-                txtId.setText("Código: " + articulo.getIdProducto()); //Desplegar IdProducto en pantalla
-                txtNombre.setText("Nombre: " + articulo.getNombre()); //Desplegar Nombre en pantalla
+                txtId.setText("Código: " + articulo.getIdProducto());
+                txtNombre.setText("Nombre: " + articulo.getNombre());
                 btnAgregar.setEnabled(true);
             }
     }
 
+    /* Metodo para regresar los datos al Acitvity anterior en este caso UsuarioActivity */
     public void onClickAgregar(View view) {
         String pCount = String.valueOf(np.getValue());
         Intent intent = new Intent();
         intent.putExtra("ID", articulo.getIdProducto());
         intent.putExtra("NAME", articulo.getNombre());
         intent.putExtra("COUNT", pCount);
-        setResult(RESULT_OK, intent);
+        setResult(RESULT_OK,intent);
         finish();
     }
 
@@ -69,7 +69,6 @@ public class ConsultaNombreActivity extends Activity{
         btnAgregar = findViewById(R.id.btnAgregar);
         txtId = findViewById(R.id.txtId);
         txtNombre = findViewById(R.id.txtNombre);
-        txtExistencia = findViewById(R.id.txtExistencia);
         np = findViewById(R.id.np);
         np.setMinValue(1);
         np.setMaxValue(20);
@@ -80,7 +79,6 @@ public class ConsultaNombreActivity extends Activity{
     private EditText edtNombre;
     private TextView txtId;
     private TextView txtNombre;
-    private TextView txtExistencia;
     private Button btnConsulta;
     private Button btnAgregar;
     private NumberPicker np;

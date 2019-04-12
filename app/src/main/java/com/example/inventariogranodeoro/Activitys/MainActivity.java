@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.example.inventariogranodeoro.DAO.Conexion;
 import com.example.inventariogranodeoro.DAO.UsuarioDAO;
+import com.example.inventariogranodeoro.Permisos.CamaraPermisos;
 import com.example.inventariogranodeoro.R;
 import java.sql.Connection;
 
@@ -29,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initComponents();
+        new CamaraPermisos().solicitarPermisos(this);
+        initComponents();                                        // Simulacion de Java al agregar todos los componentes en un inicializador
     }
 
     private void initComponents() {
@@ -37,16 +39,12 @@ public class MainActivity extends AppCompatActivity {
         txtusername = findViewById(R.id.txtUsername);
         txtpassword = findViewById(R.id.txtPassword);
         btniniciar = findViewById(R.id.btnIniciar);
+        btn_get = findViewById(R.id.btnScan);
+
         //deshabilitar boton de inicio si no hay texto en los campos
         txtusername.addTextChangedListener(loginTextWatcher);
         txtpassword.addTextChangedListener(loginTextWatcher);
-        btn_get = findViewById(R.id.btnScan);
 
-    }
-
-    public void iniciarUsuario(){
-        Intent intent = new Intent(this, UsuarioActivity.class);
-        startActivity(intent);
     }
 
     public void onClickScan(View view)
@@ -54,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
         Conexion con = new Conexion();
         conectar = con.getConexion();
         if(conectar != null){
-            Toast.makeText(getApplicationContext(),"Dentro de red", Toast.LENGTH_LONG).show();
-            iniciarUsuario(); //Iniciar sesion si la red esta disponible
+            Intent intent = new Intent(this, UsuarioActivity.class);
+            startActivity(intent);
         }else{
             Toast.makeText(getApplicationContext(),"Fuera de red", Toast.LENGTH_LONG).show();
         }

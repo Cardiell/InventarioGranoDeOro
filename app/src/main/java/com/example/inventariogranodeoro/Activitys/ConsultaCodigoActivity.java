@@ -1,6 +1,7 @@
 package com.example.inventariogranodeoro.Activitys;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,13 +21,15 @@ import com.example.inventariogranodeoro.R;
  ******************************************************/
 public class ConsultaCodigoActivity extends Activity {
 
-    ArticuloDAO consultaCodigo; //Objeto para realizar la consulta por codigo
+    ArticuloDAO consultaCodigo;                                    //Objeto para realizar la consulta por codigo
     String text;
+    Articulo articulo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consulta_codigo);
-        initComponents();                                          // Simulacion de Java al agregar todos los componentes en un inicializador
+        initComponents();
     }
 
     public void onClickConsultar(View view) {
@@ -34,14 +37,30 @@ public class ConsultaCodigoActivity extends Activity {
         if(text.matches("")){                                // Si campo esta vacio, agregar texto no valido
             text = "lol";
         }
-        Articulo articulo = consultaCodigo.consultaCodigo(text);   // Obteniendo el articulo
-        if(articulo == null) {
-            Toast.makeText(getApplicationContext(), "Codigo incorrecto.", Toast.LENGTH_LONG).show();
-        }else {
-            txtId.setText("Código: " + articulo.getIdProducto()); //Desplegar IdProducto en pantalla
-            txtNombre.setText("Nombre: " + articulo.getNombre()); //Desplegar Nombre en pantalla
+        articulo = consultaCodigo.consultaCodigo(text);            // Obteniendo el articulo
+        if(articulo == null){                                      //Si el resultado del query esta vacio
+            btnAgregar.setEnabled(false);
+            txtId.setText("Código: ");
+            txtNombre.setText("Nombre: ");
+            Toast.makeText(getApplicationContext(),"El articulo: "+text+"\nNo esta disponible", Toast.LENGTH_LONG).show();
+        }else{
+            txtId.setText("Código: " + articulo.getIdProducto());
+            txtNombre.setText("Nombre: " + articulo.getNombre());
+            btnAgregar.setEnabled(true);
         }
 
+    }
+
+    /* Metodo para regresar los datos al Acitvity anterior en este caso UsuarioActivity */
+
+    public void onClickAgregar(View view) {
+        String pCount = String.valueOf(np.getValue());
+        Intent intent = new Intent();
+        intent.putExtra("ID", articulo.getIdProducto());
+        intent.putExtra("NAME", articulo.getNombre());
+        intent.putExtra("COUNT", pCount);
+        setResult(RESULT_OK,intent);
+        finish();
     }
 
     private void initComponents() {
@@ -50,10 +69,10 @@ public class ConsultaCodigoActivity extends Activity {
         btnConsultar = findViewById(R.id.btnConsultar);
         txtId = findViewById(R.id.txtId);
         txtNombre = findViewById(R.id.txtNombre);
-        txtExistencia = findViewById(R.id.txtExistencia);
+        btnAgregar = findViewById(R.id.btnAgregar);
 
         //Seleccionador de cantidad de producto
-        NumberPicker np = findViewById(R.id.np);
+        np = findViewById(R.id.np);
         np.setMinValue(1);
         np.setMaxValue(20);
         np.setWrapSelectorWheel(true);
@@ -63,5 +82,7 @@ public class ConsultaCodigoActivity extends Activity {
     private Button btnConsultar;
     private TextView txtId;
     private TextView txtNombre;
-    private TextView txtExistencia;
+    private Button btnAgregar;
+    private NumberPicker np;
+
 }
