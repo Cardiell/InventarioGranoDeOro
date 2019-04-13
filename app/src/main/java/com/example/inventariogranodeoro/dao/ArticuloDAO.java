@@ -1,7 +1,7 @@
-package com.example.inventariogranodeoro.DAO;
+package com.example.inventariogranodeoro.dao;
 
 
-import com.example.inventariogranodeoro.Entidades.Articulo;
+import com.example.inventariogranodeoro.entidades.Articulo;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;

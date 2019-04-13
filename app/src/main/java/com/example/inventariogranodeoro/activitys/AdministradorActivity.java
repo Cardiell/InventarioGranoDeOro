@@ -1,4 +1,4 @@
-package com.example.inventariogranodeoro.Activitys;
+package com.example.inventariogranodeoro.activitys;
 
 import android.app.Activity;
 import android.os.Bundle;

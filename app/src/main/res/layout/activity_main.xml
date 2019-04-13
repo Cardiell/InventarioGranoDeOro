@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activitys.MainActivity" >
+    tools:context=".activitys.MainActivity" >
 
     <LinearLayout
         android:id="@+id/LinearLayout_0"
@@ -16,7 +16,8 @@
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <TextView android:id="@+id/lblAdmin"
             android:layout_width="wrap_content"

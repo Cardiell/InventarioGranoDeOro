@@ -1,4 +1,4 @@
-package com.example.inventariogranodeoro.Entidades;
+package com.example.inventariogranodeoro.entidades;
 
 public class Usuario{
     private String username;

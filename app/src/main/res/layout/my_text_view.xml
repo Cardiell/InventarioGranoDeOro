@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:weightSum="1"
     android:layout_height="wrap_content"
     android:background="@drawable/border"
-    android:layout_marginTop="10dp">
+    android:layout_marginTop="10dp"
+    android:baselineAligned="false">
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -18,7 +20,9 @@
             android:layout_marginLeft="5dp"
             android:gravity="left"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            tools:ignore="RtlHardcoded" />
         <TextView
             android:id="@+id/postName"
             android:layout_width="match_parent"
@@ -26,7 +30,9 @@
             android:layout_marginLeft="5dp"
             android:gravity="left"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            tools:ignore="RtlHardcoded" />
         <TextView
             android:id="@+id/postCount"
             android:layout_width="match_parent"
@@ -35,7 +41,9 @@
             android:layout_marginBottom="2dp"
             android:gravity="left"
             android:textStyle="bold"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:layout_marginStart="5dp"
+            tools:ignore="RtlHardcoded" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="0dp"
@@ -48,14 +56,16 @@
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/pencil" />
+            android:src="@drawable/pencil"
+            android:contentDescription="@string/desc"/>
         <ImageButton
             android:id="@+id/deleteProduct"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/x" />
+            android:src="@drawable/x"
+            android:contentDescription="@string/desc"/>
     </LinearLayout>
 </LinearLayout>
 

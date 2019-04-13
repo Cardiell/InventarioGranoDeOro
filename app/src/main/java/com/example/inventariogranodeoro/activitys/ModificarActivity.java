@@ -1,4 +1,4 @@
-package com.example.inventariogranodeoro.Activitys;
+package com.example.inventariogranodeoro.activitys;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
-import com.example.inventariogranodeoro.Entidades.Articulo;
+import com.example.inventariogranodeoro.entidades.Articulo;
 import com.example.inventariogranodeoro.R;
 
 public class ModificarActivity extends Activity{
@@ -28,8 +28,8 @@ public class ModificarActivity extends Activity{
         btnCambiar = findViewById(R.id.btnModificar);
         txtId = findViewById(R.id.mtxtId);
         txtNombre = findViewById(R.id.mtxtNombre);
-        txtId.setText("Código: " + articulo.getIdProducto());
-        txtNombre.setText("Nombre: " + articulo.getNombre());
+        txtId.setText(String.format("Código: ").concat(articulo.getIdProducto()));
+        txtNombre.setText(String.format("Código: ").concat(articulo.getNombre()));
         np = findViewById(R.id.mnp);
         np.setMinValue(1);
         np.setMaxValue(20);

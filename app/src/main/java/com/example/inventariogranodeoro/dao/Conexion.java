@@ -1,4 +1,4 @@
-package com.example.inventariogranodeoro.DAO;
+package com.example.inventariogranodeoro.dao;
 import android.annotation.SuppressLint;
 import android.os.StrictMode;
 import android.util.Log;
@@ -17,10 +17,10 @@ import java.sql.Statement;
  *                                                    *
  ******************************************************/
 public class Conexion{
-    private String IP = "192.168.0.3";
+    private String IP = "192.168.0.2";
     private String DB = "GDO";
-    private String DBUser = "user";
-    private String DBPWD = "1pAssW0rd";
+    private String DBUser = "sa";
+    private String DBPWD = "sqlserver";
 
     @SuppressLint("NewApi")
 

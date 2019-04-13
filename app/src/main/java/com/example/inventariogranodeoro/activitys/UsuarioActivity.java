@@ -1,4 +1,4 @@
-package com.example.inventariogranodeoro.Activitys;
+package com.example.inventariogranodeoro.activitys;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,9 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.example.inventariogranodeoro.Entidades.Articulo;
+import com.example.inventariogranodeoro.entidades.Articulo;
 import com.example.inventariogranodeoro.Lista;
 import com.example.inventariogranodeoro.R;
 

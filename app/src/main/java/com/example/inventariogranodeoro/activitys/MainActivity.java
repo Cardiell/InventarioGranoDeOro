@@ -1,4 +1,4 @@
-package com.example.inventariogranodeoro.Activitys;
+package com.example.inventariogranodeoro.activitys;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.example.inventariogranodeoro.DAO.Conexion;
-import com.example.inventariogranodeoro.DAO.UsuarioDAO;
-import com.example.inventariogranodeoro.Permisos.CamaraPermisos;
+import com.example.inventariogranodeoro.dao.Conexion;
+import com.example.inventariogranodeoro.dao.UsuarioDAO;
+import com.example.inventariogranodeoro.permisos.CamaraPermisos;
 import com.example.inventariogranodeoro.R;
 import java.sql.Connection;
 

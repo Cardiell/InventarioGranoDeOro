@@ -1,4 +1,4 @@
-package com.example.inventariogranodeoro.Activitys;
+package com.example.inventariogranodeoro.activitys;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,8 +10,8 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.inventariogranodeoro.DAO.ArticuloDAO;
-import com.example.inventariogranodeoro.Entidades.Articulo;
+import com.example.inventariogranodeoro.dao.ArticuloDAO;
+import com.example.inventariogranodeoro.entidades.Articulo;
 import com.example.inventariogranodeoro.R;
 
 /* ****************************************************
@@ -40,12 +40,12 @@ public class ConsultaNombreActivity extends Activity{
         articulo = consultaNombre.consultaNombre(text);
             if(articulo == null){                                             //Si el resultado del query esta vacio
                 btnAgregar.setEnabled(false);
-                txtId.setText("Código: ");
-                txtNombre.setText("Nombre: ");
+                txtId.setText(String.format("Código:"));
+                txtNombre.setText(String.format("Nombre:"));
                 Toast.makeText(getApplicationContext(),"El articulo: "+text+"\nNo esta disponible", Toast.LENGTH_LONG).show();
             }else{
-                txtId.setText("Código: " + articulo.getIdProducto());
-                txtNombre.setText("Nombre: " + articulo.getNombre());
+                txtId.setText(String.format("Código: ").concat(articulo.getIdProducto()));
+                txtNombre.setText(String.format("Código: ").concat(articulo.getNombre()));
                 btnAgregar.setEnabled(true);
             }
     }

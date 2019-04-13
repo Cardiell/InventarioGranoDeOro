@@ -8,11 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.inventariogranodeoro.Activitys.ModificarActivity;
-import com.example.inventariogranodeoro.Activitys.UsuarioActivity;
-import com.example.inventariogranodeoro.Entidades.Articulo;
+import com.example.inventariogranodeoro.activitys.ModificarActivity;
+import com.example.inventariogranodeoro.activitys.UsuarioActivity;
+import com.example.inventariogranodeoro.entidades.Articulo;
 import java.util.ArrayList;
 
 interface CustomItemClickListener{
@@ -79,7 +78,7 @@ public class Lista extends RecyclerView.Adapter<Lista.MyViewHolder>{
     public void onBindViewHolder(MyViewHolder viewHolder, int i){
         viewHolder.postId.setText(articulos.get(i).getIdProducto());
         viewHolder.postName.setText(articulos.get(i).getNombre());
-        viewHolder.postCount.setText(Float.toString(articulos.get(i).getExistencia()));
+        viewHolder.postCount.setText(String.format(Float.toString(articulos.get(i).getExistencia())));
     }
     // Return the size of your dataset (invoked by the layout manager)
 

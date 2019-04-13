@@ -1,4 +1,4 @@
-package com.example.inventariogranodeoro.Activitys;
+package com.example.inventariogranodeoro.activitys;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,8 +8,8 @@ import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.inventariogranodeoro.DAO.ArticuloDAO;
-import com.example.inventariogranodeoro.Entidades.Articulo;
+import com.example.inventariogranodeoro.dao.ArticuloDAO;
+import com.example.inventariogranodeoro.entidades.Articulo;
 import com.example.inventariogranodeoro.R;
 import com.google.zxing.Result;
 
@@ -69,8 +69,8 @@ public class ConsultaScannerActivity extends Activity implements ZXingScannerVie
             Toast.makeText(getApplicationContext(), "El articulo: "+id+"\nNo esta disponible", Toast.LENGTH_LONG).show();
             finish();
         } else {
-            txtId.setText("Código: " + articulo.getIdProducto());
-            txtNombre.setText("Nombre: " + articulo.getNombre());
+            txtId.setText(String.format("Código: ").concat(articulo.getIdProducto()));
+            txtNombre.setText(String.format("Código: ").concat(articulo.getNombre()));
         }
     }
 

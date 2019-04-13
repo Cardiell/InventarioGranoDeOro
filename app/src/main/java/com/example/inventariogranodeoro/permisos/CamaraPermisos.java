@@ -1,4 +1,4 @@
-package com.example.inventariogranodeoro.Permisos;
+package com.example.inventariogranodeoro.permisos;
 
 import android.Manifest;
 import android.content.pm.PackageManager;

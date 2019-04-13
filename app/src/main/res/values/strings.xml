@@ -2,7 +2,6 @@
     <string name="app_name">Inventario | Grano De Oro</string>
     <string name="admin"><b>Administrador</b></string>
     <string name="usuario"><b>Usuario Estándar</b></string>
-    <string name="nombre">Nombre</string>
     <string name="pwd">Contraseña</string>
     <string name="iniciar">Iniciar Sesión</string>
     <string name="scan">Iniciar Sesión</string>
@@ -10,18 +9,17 @@
     <string name="nombreProducto">Nombre de producto</string>
     <string name="idProducto">Código</string>
     <string name="scanner">Escanear</string>
-    <string name="lista">Lista de productos:</string>
+ <!--   <string name="lista">Lista de productos:</string> -->
     <string name="consultar">Consultar</string>
     <string name="viewId"><b>Código: </b></string>
     <string name="viewNombre"><b>Nombre: </b></string>
+    <string name="nombre">Nombre</string>
     <string name="viewExistencia"><b>Elige una cantidad</b></string>
     <string name="agregar">Agregar Producto</string>
     <string name="generar">Generar reporte</string>
     <string name="codigoProducto">Código de producto</string>
-    <string name="lCodigo">CÓDIGO</string>
-    <string name="lNombre">NOMBRE</string>
-    <string name="lExistencia">CANTIDAD</string>
     <string name="cambiarExistencia">Elige nuevo valor de existencia</string>
-    <string name="eliminarProducto">Eliminar</string>
+  <!--  <string name="eliminarProducto">Eliminar</string> -->
     <string name="modificarProducto">Guardar</string>
+    <string name="desc">Descripcion :V</string>
 </resources>
