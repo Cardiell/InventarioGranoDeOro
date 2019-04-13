@@ -1,6 +1,8 @@
 package com.example.inventariogranodeoro.Entidades;
 
-public class Articulo {
+import java.io.Serializable;
+
+public class Articulo implements Serializable {
     private String idProducto;
     private String nombre;
     private float existencia;
@@ -35,5 +37,10 @@ public class Articulo {
 
     public void setExistencia(float existencia) {
         this.existencia = existencia;
+    }
+
+    @Override
+    public String toString(){
+        return this.idProducto;
     }
 }

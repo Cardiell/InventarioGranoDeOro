@@ -53,8 +53,6 @@ public class ArticuloDAO {
         CallableStatement cstm = null;
         Articulo articulo = null;
         String query = "exec consultaNombre '"+nombre+"'";
-        System.out.println(query);
-
         try{
             con = conexion.getConexion();
             cstm = con.prepareCall(query);

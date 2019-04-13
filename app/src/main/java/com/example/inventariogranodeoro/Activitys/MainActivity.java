@@ -47,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onClickScan(View view)
-    {
+    public void onClickScan(View view) {
         Conexion con = new Conexion();
         conectar = con.getConexion();
         if(conectar != null){
@@ -60,8 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    public void onClickLogin(View view){ //Revisar si el texto contiene espacios antes de iniciar sesion
+    public void onClickLogin(View view){                                //Revisar si el texto contiene espacios antes de iniciar sesion
         if(txtusername.getText().toString().contains(" ")){
             txtusername.setError("¡No espacios por favor!");
             Toast.makeText(MainActivity.this, "¡No espacios por favor!", Toast.LENGTH_LONG).show();
@@ -75,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             user = "lol";
         }
         pass = txtpassword.getText().toString();
-            if(login.consultaUsuario(user,pass) == null){ //Si el resultado del query es nulo
+            if(login.consultaUsuario(user,pass) == null){               //Si el resultado del query es nulo
                 Toast.makeText(getApplicationContext(),"Datos incorrectos.", Toast.LENGTH_LONG).show();
             }else{
                 Intent intent = new Intent(this, AdministradorActivity.class);

@@ -53,11 +53,9 @@ public class ConsultaNombreActivity extends Activity{
 
     /* Metodo para regresar los datos al Acitvity anterior en este caso UsuarioActivity */
     public void onClickAgregar(View view) {
-        String pCount = String.valueOf(np.getValue());
+        articulo.setExistencia(Float.valueOf(np.getValue()));
         Intent intent = new Intent();
-        intent.putExtra("ID", articulo.getIdProducto());
-        intent.putExtra("NAME", articulo.getNombre());
-        intent.putExtra("COUNT", pCount);
+        intent.putExtra("ARTICULO", articulo);
         setResult(RESULT_OK,intent);
         finish();
     }

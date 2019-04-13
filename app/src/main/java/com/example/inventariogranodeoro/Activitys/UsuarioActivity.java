@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import com.example.inventariogranodeoro.Entidades.Articulo;
 import com.example.inventariogranodeoro.Lista;
 import com.example.inventariogranodeoro.R;
 
@@ -49,10 +50,8 @@ public class UsuarioActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if (requestCode == 1){
             if(resultCode == Activity.RESULT_OK){
-                lista.addProducto(data.getStringExtra("ID"),data.getStringExtra("NAME"),data.getStringExtra("COUNT"));
-            }
-            if(resultCode == Activity.RESULT_CANCELED) {
-                //Write your code if there's no result
+                Articulo arti =(Articulo) data.getSerializableExtra("ARTICULO");
+                lista.addProducto(arti);
             }
         }
     }
@@ -77,6 +76,5 @@ public class UsuarioActivity extends AppCompatActivity {
     private Button btnCodigo;
     private Button btnScan;
     private RecyclerView recyclerView;
-
 
 }

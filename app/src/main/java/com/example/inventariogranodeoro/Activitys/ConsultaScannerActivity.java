@@ -41,19 +41,17 @@ public class ConsultaScannerActivity extends Activity implements ZXingScannerVie
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String pCount = String.valueOf(np.getValue());
+                articulo.setExistencia(Float.valueOf(np.getValue()));
                 Intent intent = new Intent();
-                intent.putExtra("ID", articulo.getIdProducto());
-                intent.putExtra("NAME", articulo.getNombre());
-                intent.putExtra("COUNT", pCount);
+                intent.putExtra("ARTICULO", articulo);
                 setResult(RESULT_OK,intent);
-                System.out.println("producto: "+articulo.getIdProducto());
                 finish();
             }
         });
 
     }
 
+    /* inicializando el scanner al inicializar la camara se va a handleResult*/
     public void scaner() {
         vistaescaner = new ZXingScannerView(this);
         vistaescaner.setResultHandler(this);
@@ -69,7 +67,7 @@ public class ConsultaScannerActivity extends Activity implements ZXingScannerVie
         consulta = new ArticuloDAO();
         articulo = consulta.consultaCodigo(id);
         initComponents();
-        if (articulo == null) { //Si el resultado del query esta vacio
+        if (articulo == null) {                                                 //Si el resultado del query esta vacio
             Toast.makeText(getApplicationContext(), "El articulo: "+id+"\nNo esta disponible", Toast.LENGTH_LONG).show();
             finish();
         } else {
