@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".Activitys.MainActivity" >
 
     <LinearLayout
         android:id="@+id/LinearLayout_0"
@@ -18,13 +18,13 @@
         android:gravity="center"
         android:orientation="vertical" >
 
-        <TextView android:id="@+id/admin"
+        <TextView android:id="@+id/lblAdmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/admin" />
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/txtUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -32,7 +32,7 @@
             android:inputType="textPersonName"
             tools:ignore="Autofill" />
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/txtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -40,25 +40,26 @@
             android:inputType="textPassword"
             tools:ignore="Autofill" />
         <Button
-            android:id="@+id/iniciar"
+            android:id="@+id/btnIniciar"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/iniciar"
             android:enabled="false"
-            android:onClick="login" />
+            android:onClick="onClickLogin" />
         <Space
             android:id="@+id/Space"
             android:layout_width="match_parent"
             android:layout_height="50dp" />
-        <TextView android:id="@+id/user"
+        <TextView android:id="@+id/lblUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/usuario" />
         <Button
-            android:id="@+id/scan"
+            android:id="@+id/btnScan"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/scan" />
+            android:text="@string/scan"
+            android:onClick="onClickScan"/>
     </LinearLayout>
 </RelativeLayout>

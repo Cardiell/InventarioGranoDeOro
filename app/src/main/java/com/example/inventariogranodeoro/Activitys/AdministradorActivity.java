@@ -1,9 +1,11 @@
-package com.example.inventariogranodeoro;
+package com.example.inventariogranodeoro.Activitys;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-public class Administrador extends Activity {
+import com.example.inventariogranodeoro.R;
+
+public class AdministradorActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

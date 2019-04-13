@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConsultaNombre" >
+    tools:context=".Activitys.ConsultaNombreActivity" >
     <LinearLayout
         android:id="@+id/LinearLayout_2"
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         android:orientation="vertical" >
 
         <EditText
-            android:id="@+id/nProducto"
+            android:id="@+id/edtnProducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -27,14 +27,15 @@
             android:inputType="text"
             tools:ignore="Autofill" />
         <Button
-            android:id="@+id/consultar"
+            android:id="@+id/btnConsultar"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
-            android:text="@string/consultar" />
+            android:text="@string/consultar"
+            android:onClick="onClickConsultar"/>
         <TextView
-            android:id="@+id/viewId"
+            android:id="@+id/txtId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -42,7 +43,7 @@
             android:text="@string/viewId"
             android:textSize="20sp" />
         <TextView
-            android:id="@+id/viewNombre"
+            android:id="@+id/txtNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -50,7 +51,7 @@
             android:text="@string/viewNombre"
             android:textSize="20sp" />
         <TextView
-            android:id="@+id/viewExistencia"
+            android:id="@+id/txtExistencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -63,11 +64,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
         <Button
-            android:id="@+id/agregar"
+            android:id="@+id/btnAgregar"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/agregar"
-            android:enabled="false" />
+            android:enabled="false"
+            android:onClick="onClickAgregar"/>
     </LinearLayout>
 </RelativeLayout>
