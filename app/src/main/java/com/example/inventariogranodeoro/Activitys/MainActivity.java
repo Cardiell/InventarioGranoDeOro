@@ -21,7 +21,6 @@ import java.sql.Connection;
  *                                                    *
  ******************************************************/
 public class MainActivity extends AppCompatActivity {
-
     String user, pass;
     Connection conectar;
     UsuarioDAO login;
@@ -31,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         new CamaraPermisos().solicitarPermisos(this);
-        initComponents();                                        // Simulacion de Java al agregar todos los componentes en un inicializador
+        initComponents(); // Simulacion de Java al agregar todos los componentes en un inicializador
     }
 
-    private void initComponents() {
+    private void initComponents(){
         login = new UsuarioDAO();
         txtusername = findViewById(R.id.txtUsername);
         txtpassword = findViewById(R.id.txtPassword);
@@ -44,9 +43,7 @@ public class MainActivity extends AppCompatActivity {
         //deshabilitar boton de inicio si no hay texto en los campos
         txtusername.addTextChangedListener(loginTextWatcher);
         txtpassword.addTextChangedListener(loginTextWatcher);
-
     }
-
     public void onClickScan(View view) {
         Conexion con = new Conexion();
         conectar = con.getConexion();
@@ -56,10 +53,9 @@ public class MainActivity extends AppCompatActivity {
         }else{
             Toast.makeText(getApplicationContext(),"Fuera de red", Toast.LENGTH_LONG).show();
         }
-
     }
 
-    public void onClickLogin(View view){                                //Revisar si el texto contiene espacios antes de iniciar sesion
+    public void onClickLogin(View view){ //Revisar si el texto contiene espacios antes de iniciar sesion
         if(txtusername.getText().toString().contains(" ")){
             txtusername.setError("¡No espacios por favor!");
             Toast.makeText(MainActivity.this, "¡No espacios por favor!", Toast.LENGTH_LONG).show();
@@ -73,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             user = "lol";
         }
         pass = txtpassword.getText().toString();
-            if(login.consultaUsuario(user,pass) == null){               //Si el resultado del query es nulo
+            if(login.consultaUsuario(user,pass) == null){ //Si el resultado del query es nulo
                 Toast.makeText(getApplicationContext(),"Datos incorrectos.", Toast.LENGTH_LONG).show();
             }else{
                 Intent intent = new Intent(this, AdministradorActivity.class);

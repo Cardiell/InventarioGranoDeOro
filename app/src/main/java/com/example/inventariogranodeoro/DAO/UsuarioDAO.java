@@ -18,8 +18,7 @@ public class UsuarioDAO {
 
     public UsuarioDAO(){}
 
-    public Usuario consultaUsuario(String user,String pass)
-    {
+    public Usuario consultaUsuario(String user,String pass){
         Connection con = null;
         ResultSet rs = null;
         CallableStatement cstm = null;
@@ -42,5 +41,4 @@ public class UsuarioDAO {
         }
         return(usuario);
     }
-
 }

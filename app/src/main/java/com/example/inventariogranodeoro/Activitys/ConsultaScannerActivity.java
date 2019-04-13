@@ -28,7 +28,6 @@ public class ConsultaScannerActivity extends Activity implements ZXingScannerVie
         scaner();
     }
 
-
     private void initComponents() {
         btnAgregar = findViewById(R.id.btnAgregar);
         txtId = findViewById(R.id.txtId);
@@ -48,7 +47,6 @@ public class ConsultaScannerActivity extends Activity implements ZXingScannerVie
                 finish();
             }
         });
-
     }
 
     /* inicializando el scanner al inicializar la camara se va a handleResult*/
@@ -60,23 +58,21 @@ public class ConsultaScannerActivity extends Activity implements ZXingScannerVie
     }
 
     @Override
-    public void handleResult(Result rawResult) {
-        String id = rawResult.getText();                                        //Obteniendo el codigo escanerado de la camara
+    public void handleResult(Result rawResult){
+        String id = rawResult.getText(); //Obteniendo el codigo escanerado de la camara
         setContentView(R.layout.activity_consulta_scanner);
         vistaescaner.stopCamera();
         consulta = new ArticuloDAO();
         articulo = consulta.consultaCodigo(id);
         initComponents();
-        if (articulo == null) {                                                 //Si el resultado del query esta vacio
+        if (articulo == null){ //Si el resultado del query esta vacio
             Toast.makeText(getApplicationContext(), "El articulo: "+id+"\nNo esta disponible", Toast.LENGTH_LONG).show();
             finish();
         } else {
             txtId.setText("Código: " + articulo.getIdProducto());
             txtNombre.setText("Nombre: " + articulo.getNombre());
-
         }
     }
-
 
     private TextView txtNombre;
     private TextView txtId;

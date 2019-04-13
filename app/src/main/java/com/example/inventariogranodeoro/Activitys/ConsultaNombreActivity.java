@@ -20,7 +20,7 @@ import com.example.inventariogranodeoro.R;
  *                                                    *
  ******************************************************/
 public class ConsultaNombreActivity extends Activity{
-
+    private int index;
     String text;
     ArticuloDAO consultaNombre;
     Articulo articulo;
@@ -31,7 +31,6 @@ public class ConsultaNombreActivity extends Activity{
         setContentView(R.layout.activity_consulta_nombre);
         initComponents();
     }
-
 
     public void onClickConsultar(View view) {
         text = edtNombre.getText().toString();
@@ -61,6 +60,7 @@ public class ConsultaNombreActivity extends Activity{
     }
 
     private void initComponents() {
+        index = getIntent().getIntExtra("INDEX", 0);
         consultaNombre = new ArticuloDAO();
         edtNombre = findViewById(R.id.edtnProducto);
         btnConsulta = findViewById(R.id.btnConsultar);
@@ -71,7 +71,6 @@ public class ConsultaNombreActivity extends Activity{
         np.setMinValue(1);
         np.setMaxValue(20);
         np.setWrapSelectorWheel(true);
-
     }
 
     private EditText edtNombre;

@@ -1,12 +1,12 @@
 package com.example.inventariogranodeoro.Entidades;
 
-public class Usuario {
+public class Usuario{
     private String username;
     private String password;
 
     public Usuario(){}
 
-    public Usuario(String username, String password) {
+    public Usuario(String username, String password){
         this.username = username;
         this.password = password;
     }

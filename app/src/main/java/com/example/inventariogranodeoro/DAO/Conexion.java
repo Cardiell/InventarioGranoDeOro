@@ -16,12 +16,11 @@ import java.sql.Statement;
  *   CLASE PARA REALIZAR LA CONEXION A NUESTRA BD     *
  *                                                    *
  ******************************************************/
-public class Conexion {
-
-    private String IP = "192.168.0.2";
+public class Conexion{
+    private String IP = "192.168.0.3";
     private String DB = "GDO";
-    private String DBUser = "sa";
-    private String DBPWD = "sqlserver";
+    private String DBUser = "user";
+    private String DBPWD = "1pAssW0rd";
 
     @SuppressLint("NewApi")
 

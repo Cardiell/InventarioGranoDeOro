@@ -20,5 +20,8 @@
     <string name="codigoProducto">Código de producto</string>
     <string name="lCodigo">CÓDIGO</string>
     <string name="lNombre">NOMBRE</string>
-    <string name="lExistencia">EXISTENCIA</string>
+    <string name="lExistencia">CANTIDAD</string>
+    <string name="cambiarExistencia">Elige nuevo valor de existencia</string>
+    <string name="eliminarProducto">Eliminar</string>
+    <string name="modificarProducto">Guardar</string>
 </resources>

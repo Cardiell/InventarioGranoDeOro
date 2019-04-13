@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import com.example.inventariogranodeoro.Entidades.Articulo;
 import com.example.inventariogranodeoro.Lista;
 import com.example.inventariogranodeoro.R;
@@ -21,20 +23,21 @@ import com.example.inventariogranodeoro.R;
  *   CONSULTA SCANNER                                 *
  *                                                    *
  ******************************************************/
-public class UsuarioActivity extends AppCompatActivity {
-
+public class UsuarioActivity extends AppCompatActivity{
+    private int index;
     private Lista lista;
     private RecyclerView.LayoutManager layoutManager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario);
         initComponents();
     }
 
     private void initComponents(){
-        lista =   new Lista();
+        lista = new Lista(this);
+        //lista.addProducto(new Articulo("123", "EJEMPLO", 45));
         recyclerView = findViewById(R.id.rvLista);
         recyclerView.setHasFixedSize(true);
         // use a linear layout manager
@@ -48,14 +51,27 @@ public class UsuarioActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if (requestCode == 1){
+        if(requestCode == 1){
             if(resultCode == Activity.RESULT_OK){
-                Articulo arti =(Articulo) data.getSerializableExtra("ARTICULO");
+                Articulo arti = (Articulo) data.getSerializableExtra("ARTICULO");
                 lista.addProducto(arti);
+            }
+        }
+        if(requestCode == 2){
+            if(resultCode == Activity.RESULT_OK){
+                //Toast.makeText(getApplicationContext(),"Modificado", Toast.LENGTH_LONG).show();
+                Articulo art = (Articulo) data.getSerializableExtra("ART");
+                lista.modify(index, art);
             }
         }
     }
 
+    public int getIndex(){
+        return this.index;
+    }
+    public void setIndex(int i){
+        this.index = i;
+    }
     public void onClickNombre(View view){
         Intent intent = new Intent(this, ConsultaNombreActivity.class);
         startActivityForResult(intent, 1);
@@ -70,11 +86,8 @@ public class UsuarioActivity extends AppCompatActivity {
         Intent intent = new Intent(this,ConsultaScannerActivity.class);
         startActivityForResult(intent, 1);
     }
-
-
     private Button btnNombre;
     private Button btnCodigo;
     private Button btnScan;
     private RecyclerView recyclerView;
-
 }

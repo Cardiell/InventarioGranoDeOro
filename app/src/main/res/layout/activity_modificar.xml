@@ -3,20 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activitys.ConsultaScannerActivity">
+    tools:context=".Activitys.ModificarActivity">
     <LinearLayout
         android:id="@+id/LinearLayout_2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:orientation="vertical" >
+
         <TextView
-            android:id="@+id/txtId"
+            android:id="@+id/mtxtId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -24,7 +25,7 @@
             android:text="@string/viewId"
             android:textSize="20sp" />
         <TextView
-            android:id="@+id/txtNombre"
+            android:id="@+id/mtxtNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -32,25 +33,24 @@
             android:text="@string/viewNombre"
             android:textSize="20sp" />
         <TextView
-            android:id="@+id/txtExistencia"
+            android:id="@+id/mtxtExistencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_gravity="center"
-            android:text="@string/viewExistencia"
+            android:text="@string/cambiarExistencia"
             android:textSize="20sp" />
         <NumberPicker
-            android:id="@+id/np"
+            android:id="@+id/mnp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
         <Button
-            android:id="@+id/btnAgregar"
+            android:id="@+id/btnModificar"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/agregar"
-            android:enabled="true" />
+            android:text="@string/modificarProducto"
+            android:onClick="onClickGuardar" />
     </LinearLayout>
 </RelativeLayout>
-

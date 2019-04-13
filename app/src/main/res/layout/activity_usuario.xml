@@ -44,40 +44,6 @@
             android:layout_gravity="center"
             android:text="@string/scanner"
             android:onClick="onClickScanner"/>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <TextView
-                android:id="@+id/pCode"
-                android:layout_width="140dp"
-                android:gravity="start"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/pName"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:text="@string/lCodigo"
-                android:layout_height="40dp" />
-            <TextView
-                android:id="@+id/pName"
-                android:layout_width="140dp"
-                android:gravity="center_horizontal"
-                android:layout_centerHorizontal="true"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:text="@string/lNombre"
-                android:layout_height="40dp" />
-            <TextView
-                android:id="@+id/pCount"
-                android:layout_width="140dp"
-                android:gravity="end"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/pName"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:text="@string/lExistencia"
-                android:layout_height="40dp" />
-        </RelativeLayout>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvLista"
             android:scrollbars="vertical"

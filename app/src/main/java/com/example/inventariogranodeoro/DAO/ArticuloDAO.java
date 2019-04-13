@@ -10,18 +10,15 @@ import java.sql.ResultSet;
 
 /* ****************************************************
  *                                                    *
- *   CLASE PARA REALIZAR CONSULTAS  A ARTICULOS POR   *
+ *   CLASE PARA REALIZAR CONSULTAS A ARTICULOS POR    *
  *   CODIGO Y NOMBRE                                  *
  *                                                    *
  ******************************************************/
-public class ArticuloDAO {
-
+public class ArticuloDAO{
     Conexion conexion = new Conexion();
-
     public ArticuloDAO(){}
 
-    public Articulo consultaCodigo(String id)
-    {
+    public Articulo consultaCodigo(String id){
         Connection con = null;
         ResultSet rs = null;
         CallableStatement cstm = null;
@@ -46,8 +43,7 @@ public class ArticuloDAO {
         return(articulo);
     }
 
-    public Articulo consultaNombre(String nombre)
-    {
+    public Articulo consultaNombre(String nombre){
         Connection con = null;
         ResultSet rs = null;
         CallableStatement cstm = null;

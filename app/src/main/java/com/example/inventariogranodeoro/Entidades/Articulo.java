@@ -2,12 +2,12 @@ package com.example.inventariogranodeoro.Entidades;
 
 import java.io.Serializable;
 
-public class Articulo implements Serializable {
+public class Articulo implements Serializable{
     private String idProducto;
     private String nombre;
     private float existencia;
 
-    public Articulo(String idProducto, String nombre, float existencia) {
+    public Articulo(String idProducto, String nombre, float existencia){
         this.idProducto = idProducto;
         this.nombre = nombre;
         this.existencia = existencia;
