@@ -27,12 +27,12 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:backgroundTint="@color/VerdePrimerio"
+            android:backgroundTint="@color/VerdePrimario"
             android:ems="10"
             android:hint="@string/nombreProducto"
             android:inputType="text"
-            android:textColor="@color/Rojo"
-            android:textColorHint="@color/VerdePrimerio"
+            android:textColor="@color/VerdePrimario"
+            android:textColorHint="@color/VerdePrimario"
             tools:ignore="Autofill" />
 
         <Button
@@ -55,7 +55,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:text="@string/viewId"
-            android:textColor="@color/VerdePrimerio"
+            android:textColor="@color/VerdePrimario"
             android:textSize="20sp" />
 
         <TextView
@@ -65,7 +65,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:text="@string/viewNombre"
-            android:textColor="@color/VerdePrimerio"
+            android:textColor="@color/VerdePrimario"
             android:textSize="20sp" />
 
         <TextView
@@ -75,7 +75,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="@string/viewExistencia"
-            android:textColor="@color/VerdePrimerio"
+            android:textColor="@color/VerdePrimario"
             android:textSize="20sp" />
 
         <NumberPicker
@@ -83,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:solidColor="@color/VerdePrimerio" />
+            android:solidColor="@color/VerdePrimario" />
 
         <Button
             android:id="@+id/btnAgregar"
