@@ -3,55 +3,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/CremaSecundario"
     tools:context=".activitys.ModificarActivity">
+
     <LinearLayout
         android:id="@+id/LinearLayout_2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
         android:orientation="vertical"
         tools:ignore="UselessParent">
 
         <TextView
             android:id="@+id/mtxtId"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:text="@string/viewId"
+            android:textColor="@color/VerdePrimerio"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/mtxtNombre"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:text="@string/viewNombre"
+            android:textColor="@color/VerdePrimerio"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/mtxtExistencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:text="@string/cambiarExistencia"
+            android:textColor="@color/VerdePrimerio"
             android:textSize="20sp" />
+
         <NumberPicker
             android:id="@+id/mnp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:solidColor="@color/VerdePrimerio" />
+
         <Button
             android:id="@+id/btnModificar"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:onClick="onClickGuardar"
             android:text="@string/modificarProducto"
-            android:onClick="onClickGuardar" />
+            android:textColor="@color/RojoPrimario"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
     </LinearLayout>
 </RelativeLayout>

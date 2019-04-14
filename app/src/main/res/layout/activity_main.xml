@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activitys.MainActivity" >
+    android:background="@color/Verde"
+    tools:context=".activitys.MainActivity">
 
     <LinearLayout
         android:id="@+id/LinearLayout_0"
@@ -19,48 +21,84 @@
         android:orientation="vertical"
         tools:ignore="UselessParent">
 
-        <TextView android:id="@+id/lblAdmin"
+        <ImageView
+            android:id="@+id/imageView_logo"
+            android:layout_width="282dp"
+            android:layout_height="217dp"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:contentDescription="LogoEmpreza"
+            app:srcCompat="@drawable/logogranodeoro" />
+
+        <TextView
+            android:id="@+id/lblAdmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/admin"
+            android:textColor="@color/Blanoco"
             android:textSize="20sp"
-            android:text="@string/admin" />
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/txtUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/Amarillo"
             android:ems="10"
             android:hint="@string/nombre"
             android:inputType="textPersonName"
+            android:textColor="@color/Blanoco"
+            android:textColorHint="@color/Amarillo"
             tools:ignore="Autofill" />
+
         <EditText
             android:id="@+id/txtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/Amarillo"
             android:ems="10"
             android:hint="@string/pwd"
             android:inputType="textPassword"
+            android:textColorHint="@color/Amarillo"
             tools:ignore="Autofill" />
+
         <Button
             android:id="@+id/btnIniciar"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="@string/iniciar"
-            android:enabled="false"
-            android:onClick="onClickLogin" />
-        <Space
-            android:id="@+id/Space"
-            android:layout_width="match_parent"
-            android:layout_height="50dp" />
-        <TextView android:id="@+id/lblUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:enabled="false"
+            android:onClick="onClickLogin"
+            android:text="@string/iniciar"
+            android:textColor="@color/Amarillo"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/lblUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/usuario"
+            android:textColor="@color/Blanoco"
             android:textSize="20sp"
-            android:text="@string/usuario" />
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/btnScan"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:onClick="onClickScan"
             android:text="@string/scan"
-            android:onClick="onClickScan"/>
+            android:textColor="@color/Amarillo"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
     </LinearLayout>
 </RelativeLayout>

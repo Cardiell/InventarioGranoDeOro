@@ -1,54 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Rojo"
     tools:context=".activitys.UsuarioActivity">
+
     <LinearLayout
         android:id="@+id/LinearLayout_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical"
         tools:ignore="UselessParent">
 
-        <TextView
-            android:id="@+id/seleccionar"
+        <LinearLayout
+            android:id="@+id/LinearLayoutHorisontal_2"
             android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@color/viewfinder_mask"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/seleccionar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/IndicadorLista"
+                android:textColor="@color/Amarillo"
+                android:textSize="24sp"
+                android:textStyle="bold|italic" />
+
+            <ImageButton
+                android:id="@+id/imgBtnScanner"
+                android:layout_width="65dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/scaner" />
+
+            <ImageButton
+                android:id="@+id/imgBtnIdProduct"
+                android:layout_width="65dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/codigobarras" />
+
+            <ImageButton
+                android:id="@+id/imgBtnAdd"
+                android:layout_width="65dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/agregar" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="65dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/agregar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutHorizontal_1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/modo"
-            android:textSize="20sp" />
-        <Button
-            android:id="@+id/btnNombreProducto"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/nombre"
-            android:onClick="onClickNombre"/>
-        <Button
-            android:id="@+id/btnIdProducto"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/idProducto"
-            android:onClick="onClickCodigo"/>
-        <Button
-            android:id="@+id/btnScanner"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/scanner"
-            android:onClick="onClickScanner"/>
+            android:layout_margin="10dp"
+            android:gravity="top"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnScanner"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onClickScanner"
+                android:text="@string/scanner" />
+
+            <Button
+                android:id="@+id/btnIdProducto"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onClickCodigo"
+                android:text="@string/idProducto" />
+
+            <Button
+                android:id="@+id/btnNombreProducto"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onClickNombre"
+                android:text="@string/nombre" />
+        </LinearLayout>
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvLista"
-            android:scrollbars="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@color/viewfinder_mask"
+            android:scrollbars="vertical" />
+
     </LinearLayout>
+
 </RelativeLayout>

@@ -3,5 +3,26 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <!--<color name="colorItemBackground">#C3FFFD</color> -->
+
+    <color name="Verde">#004025</color>
+    <color name="VerdePrimerio">#0E7F40</color>
+    <color name="VerdeSecundario">#3cb64b</color>
+
+    <color name="Blanoco">#FFFFFF</color>
+    <color name="BlancoPrimario">#E3E4E5</color>
+    <color name="BlancoSecuandario">#e2e4eb</color>
+
+    <color name="Rojo">#7C0A00</color>
+    <color name="RojoPrimario">#EF242D</color>
+    <color name="RojoSecundario">#db5d20</color>
+
+    <color name="Anaranjado">#f7931e</color>
+
+    <color name="Amarillo">#FFD600</color>
+    <color name="AmarilloPrimario">#fdd500</color>
+    <color name="AmarilloSecundario">#fff100</color>
+
+    <color name="Creama">#F1EAA2</color>
+    <color name="CremaPrimario">#F9F999</color>
+    <color name="CremaSecundario">#F5F7C5</color>
 </resources>

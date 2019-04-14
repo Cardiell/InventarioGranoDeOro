@@ -22,4 +22,6 @@
   <!--  <string name="eliminarProducto">Eliminar</string> -->
     <string name="modificarProducto">Guardar</string>
     <string name="desc">Descripcion :V</string>
+
+    <string name="IndicadorLista">Lista de productos</string>
 </resources>
