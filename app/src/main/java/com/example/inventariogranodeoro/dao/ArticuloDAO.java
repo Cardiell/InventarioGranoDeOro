@@ -67,4 +67,24 @@ public class ArticuloDAO{
         }
         return(articulo);
     }
+
+    public int guardarArticulo(String nombre,float existencia){
+        int exito=0;
+        Connection con  = null ;
+        ResultSet rs = null;
+        CallableStatement cstm = null;
+        String query = "exec actualizarProductos '"+nombre+"',"+existencia;
+        try{
+            con = conexion.getConexion();
+            cstm = con.prepareCall(query);
+            cstm.execute();
+            exito=1;
+        }catch(Exception e) {
+            System.err.println("Tenemos una excepcion: "+e.getMessage());
+
+        }finally {
+            conexion.Cerrar2(cstm,rs); //Cerrar conexion
+        }
+        return exito;
+    }
 }

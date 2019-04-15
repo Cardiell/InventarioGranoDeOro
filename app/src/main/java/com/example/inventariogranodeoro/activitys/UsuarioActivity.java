@@ -6,10 +6,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
+import com.example.inventariogranodeoro.dao.ArticuloDAO;
 import com.example.inventariogranodeoro.entidades.Articulo;
 import com.example.inventariogranodeoro.Lista;
 import com.example.inventariogranodeoro.R;
@@ -32,6 +38,10 @@ public class UsuarioActivity extends AppCompatActivity{
     private ImageButton btnCodigo;
     private ImageButton btnScan;
     private RecyclerView recyclerView;
+
+    private int resultado;
+    private Toolbar toolbar;
+    ArticuloDAO guardarArticulo=new ArticuloDAO();
 
     /*
     private Button btnNombre;
@@ -101,6 +111,30 @@ public class UsuarioActivity extends AppCompatActivity{
     public void onClickScanner(View view) {
         Intent intent = new Intent(this,ConsultaScannerActivity.class);
         startActivityForResult(intent, 1);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.opcion:
+                if(lista.getItemCount()>=0){
+                    for (int i = 0; i < lista.getItemCount(); i++) {
+                        resultado=guardarArticulo.guardarArticulo(lista.getArticulo(i).getNombre(), lista.getArticulo(i).getExistencia());
+                    }
+                    if(resultado==1){
+                        Toast.makeText(getApplicationContext(),"¡Base de Datos Actualizada!", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(getApplicationContext(),"¡No se logro subir lista!", Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
+                }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
