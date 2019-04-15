@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.inventariogranodeoro.entidades.Articulo;
 import com.example.inventariogranodeoro.Lista;
@@ -27,6 +28,18 @@ public class UsuarioActivity extends AppCompatActivity{
     private Lista lista;
     private RecyclerView.LayoutManager layoutManager;
 
+    private ImageButton btnNombre;
+    private ImageButton btnCodigo;
+    private ImageButton btnScan;
+    private RecyclerView recyclerView;
+
+    /*
+    private Button btnNombre;
+    private Button btnCodigo;
+    private Button btnScan;
+    private RecyclerView recyclerView;
+    */
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -44,8 +57,10 @@ public class UsuarioActivity extends AppCompatActivity{
         recyclerView.setLayoutManager(layoutManager);
         // specify an adapter (see also next example)
         recyclerView.setAdapter(lista);
-        btnNombre = findViewById(R.id.btnNombreProducto);
-        btnCodigo = findViewById(R.id.btnIdProducto);
+        btnNombre = findViewById(R.id.imgBtnAdd);
+        btnCodigo = findViewById(R.id.imgBtnIdProduct);
+        //btnNombre = findViewById(R.id.btnNombreProducto);
+        //btnCodigo = findViewById(R.id.btnIdProducto);
     }
 
     @Override
@@ -68,9 +83,11 @@ public class UsuarioActivity extends AppCompatActivity{
     public int getIndex(){
         return this.index;
     }
+
     public void setIndex(int i){
         this.index = i;
     }
+
     public void onClickNombre(View view){
         Intent intent = new Intent(this, ConsultaNombreActivity.class);
         startActivityForResult(intent, 1);
@@ -85,8 +102,5 @@ public class UsuarioActivity extends AppCompatActivity{
         Intent intent = new Intent(this,ConsultaScannerActivity.class);
         startActivityForResult(intent, 1);
     }
-    private Button btnNombre;
-    private Button btnCodigo;
-    private Button btnScan;
-    private RecyclerView recyclerView;
+
 }
