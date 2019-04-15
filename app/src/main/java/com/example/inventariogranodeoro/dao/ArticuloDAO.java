@@ -68,17 +68,18 @@ public class ArticuloDAO{
         return(articulo);
     }
 
-    public int guardarArticulo(String nombre,float existencia){
+    public int guardarArticulo(String id,float existencia){
         int exito=0;
         Connection con  = null ;
         ResultSet rs = null;
         CallableStatement cstm = null;
-        String query = "exec actualizarProductos '"+nombre+"',"+existencia;
+        String query = "exec actualizarProductos '"+id+"',"+existencia;
         try{
             con = conexion.getConexion();
             cstm = con.prepareCall(query);
             cstm.execute();
             exito=1;
+            System.out.println("SE ACTUALIZO BD CON LISTA!");
         }catch(Exception e) {
             System.err.println("Tenemos una excepcion: "+e.getMessage());
 

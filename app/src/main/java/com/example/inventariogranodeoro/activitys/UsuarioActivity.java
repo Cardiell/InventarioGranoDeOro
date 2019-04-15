@@ -124,7 +124,7 @@ public class UsuarioActivity extends AppCompatActivity{
             case R.id.opcion:
                 if(lista.getItemCount()>=0){
                     for (int i = 0; i < lista.getItemCount(); i++) {
-                        resultado=guardarArticulo.guardarArticulo(lista.getArticulo(i).getNombre(), lista.getArticulo(i).getExistencia());
+                        resultado=guardarArticulo.guardarArticulo(lista.getArticulo(i).getIdProducto(), lista.getArticulo(i).getExistencia());
                     }
                     if(resultado==1){
                         Toast.makeText(getApplicationContext(),"¡Base de Datos Actualizada!", Toast.LENGTH_SHORT).show();
