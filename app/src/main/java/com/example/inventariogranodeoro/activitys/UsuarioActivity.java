@@ -1,11 +1,14 @@
 package com.example.inventariogranodeoro.activitys;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -42,6 +45,7 @@ public class UsuarioActivity extends AppCompatActivity{
     private int resultado;
     private Toolbar toolbar;
     ArticuloDAO guardarArticulo=new ArticuloDAO();
+
 
     /*
     private Button btnNombre;
@@ -86,6 +90,7 @@ public class UsuarioActivity extends AppCompatActivity{
                 //Toast.makeText(getApplicationContext(),"Modificado", Toast.LENGTH_LONG).show();
                 Articulo art = (Articulo) data.getSerializableExtra("ART");
                 lista.modify(index, art);
+                System.out.println("modifica");
             }
         }
     }
@@ -121,20 +126,54 @@ public class UsuarioActivity extends AppCompatActivity{
 
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
-            case R.id.opcion:
-                if(lista.getItemCount()>=0){
-                    for (int i = 0; i < lista.getItemCount(); i++) {
-                        resultado=guardarArticulo.guardarArticulo(lista.getArticulo(i).getIdProducto(), lista.getArticulo(i).getExistencia());
+            case R.id.opcion:{
+                AlertDialog.Builder dialogo_guardar = new AlertDialog.Builder(this);
+                dialogo_guardar.setTitle("Importante");
+                dialogo_guardar.setMessage("¿Desea actualizar las existencias?");
+                dialogo_guardar.setCancelable(false);
+                dialogo_guardar.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogo1, int id) {
+                        if(lista.getItemCount()>=0){
+                            for (int i = 0; i < lista.getItemCount(); i++) {
+                                resultado=guardarArticulo.guardarArticulo(lista.getArticulo(i).getIdProducto(), lista.getArticulo(i).getExistencia());
+                            }
+                            if(resultado==1){
+                                Toast.makeText(getApplicationContext(),"¡Base de Datos Actualizada!", Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(getApplicationContext(),"¡No se logro subir lista!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
                     }
-                    if(resultado==1){
-                        Toast.makeText(getApplicationContext(),"¡Base de Datos Actualizada!", Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(getApplicationContext(),"¡No se logro subir lista!", Toast.LENGTH_SHORT).show();
+                });
+                dialogo_guardar.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogo1, int id) {
+
                     }
-                    return true;
-                }
+                });
+                dialogo_guardar.show();
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }
+    public void onBackPressed(){
+        AlertDialog.Builder dialogo_salir = new AlertDialog.Builder(this);
+        dialogo_salir.setTitle("Espera");
+        dialogo_salir.setMessage("¿Quieres salir?");
+        dialogo_salir.setCancelable(false);
+        dialogo_salir.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id){
+                aceptar();
+            }
+        });
+        dialogo_salir.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+            }
+        });
+        dialogo_salir.show();
 
+    }
+    public void aceptar(){
+        super.onBackPressed();
+    }
 }

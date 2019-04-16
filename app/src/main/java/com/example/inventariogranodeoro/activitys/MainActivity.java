@@ -92,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
+
     private Button btn_get;
     private Button btniniciar;
     private EditText txtusername;

@@ -1,11 +1,17 @@
 package com.example.inventariogranodeoro;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -53,6 +59,7 @@ public class Lista extends RecyclerView.Adapter<Lista.MyViewHolder>{
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i){
+
         View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.my_text_view, viewGroup, false);
         final MyViewHolder vh = new MyViewHolder(itemView);
         vh.btnUpdate.setOnClickListener(new View.OnClickListener(){
@@ -67,13 +74,14 @@ public class Lista extends RecyclerView.Adapter<Lista.MyViewHolder>{
         vh.btnDelete.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    //Toast.makeText(user, Integer.toString(vh.getLayoutPosition()), Toast.LENGTH_LONG).show();
                     articulos.remove(vh.getLayoutPosition());
                     notifyDataSetChanged();
                 }
         });
         return vh;
     }
+
+
     @Override
     public void onBindViewHolder(MyViewHolder viewHolder, int i){
         viewHolder.postId.setText(articulos.get(i).getIdProducto());
