@@ -18,27 +18,15 @@
         android:layout_marginRight="0dp"
         android:layout_marginBottom="0dp"
         android:orientation="vertical"
-        tools:ignore="UselessParent">
+        >
 
         <LinearLayout
             android:id="@+id/LinearLayoutHorisontal_2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/Verde"
             android:gravity="bottom"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/seleccionar"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="bottom"
-                android:text="@string/IndicadorLista"
-                android:textColor="@color/Amarillo"
-                android:textSize="24sp"
-                android:textStyle="bold|italic" />
 
             <ImageButton
                 android:id="@+id/imgBtnScanner"
@@ -101,27 +89,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="62dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:text="Nombre del Producto"
-                android:textColor="@color/Amarillo"
-                android:textSize="18sp"
-                android:textStyle="bold|italic" />
-
-            <TextView
                 android:id="@+id/textView3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:gravity="bottom"
-                android:text="Cantidad"
+                android:gravity="center"
+                android:text="@string/IndicadorLista"
                 android:textColor="@color/Amarillo"
                 android:textSize="18sp"
                 android:textStyle="bold|italic" />
@@ -133,9 +108,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:background="@color/viewfinder_mask"
-            android:scrollbars="vertical"
-
-            />
+ />
 
     </LinearLayout>
 
