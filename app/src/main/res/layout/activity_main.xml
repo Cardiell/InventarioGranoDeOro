@@ -8,9 +8,6 @@
     tools:context=".activitys.MainActivity">
 
 
-
-
-
     <LinearLayout
         android:id="@+id/LinearLayout_0"
         android:layout_width="match_parent"
@@ -23,7 +20,6 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:background="@android:color/transparent"
-            android:contentDescription="LogoEmpreza"
             app:srcCompat="@drawable/logogranodeoro" />
 
         <TextView
@@ -54,7 +50,7 @@
             android:singleLine="false"
             android:textColor="@color/Blanoco"
             android:textColorHint="@color/Blanoco"
-            android:textSize="15dp"
+            android:textSize="15sp"
             tools:ignore="Autofill" />
 
         <EditText
@@ -73,7 +69,7 @@
             android:paddingLeft="20dp"
             android:textColor="@color/Blanoco"
             android:textColorHint="@color/Blanoco"
-            android:textSize="15dp"
+            android:textSize="15sp"
             tools:ignore="Autofill" />
 
         <Button
@@ -88,7 +84,7 @@
             android:onClick="onClickLogin"
             android:text="@string/iniciar"
             android:textColor="@color/Blanoco"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnScan"
@@ -101,6 +97,6 @@
             android:onClick="onClickScan"
             android:text="Usuario Estandar"
             android:textColor="@color/Blanoco"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
     </LinearLayout>
 </RelativeLayout>

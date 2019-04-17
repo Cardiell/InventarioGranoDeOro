@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Blanoco"
     tools:context=".activitys.UsuarioActivity">
 
     <LinearLayout
@@ -18,7 +17,7 @@
             android:id="@+id/LinearLayoutHorisontal_2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/Verde"
+            android:background="@color/colorPrimary"
             android:gravity="bottom"
             android:orientation="horizontal">
 
@@ -72,13 +71,14 @@
                 android:background="@android:color/transparent"
                 android:padding="3dp"
                 android:scaleType="fitCenter"
+                android:onClick="onClickActualizar"
                 app:srcCompat="@drawable/actualizar" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@color/Verde"
+            android:background="@color/colorPrimary"
             android:gravity="bottom"
             android:orientation="horizontal">
 
@@ -86,14 +86,12 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/IndicadorLista"
-                android:textColor="@color/Amarillo"
-                android:textSize="18sp"
-                android:textStyle="bold|italic" />
+                android:textColor="@color/AmarilloSecundario"
+                android:textSize="18dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView

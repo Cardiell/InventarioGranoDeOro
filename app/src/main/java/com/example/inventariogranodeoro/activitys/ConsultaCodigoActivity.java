@@ -37,7 +37,7 @@ public class ConsultaCodigoActivity extends Activity {
     public void onClickConsultar(View view) {
         text = edtid.getText().toString();
         if(text.matches("")){                                // Si campo esta vacio, agregar texto no valido
-            text = "lol";
+            text = "";
         }
         articulo = consultaCodigo.consultaCodigo(text);            // Obteniendo el articulo
         if(articulo == null){                                      //Si el resultado del query esta vacio

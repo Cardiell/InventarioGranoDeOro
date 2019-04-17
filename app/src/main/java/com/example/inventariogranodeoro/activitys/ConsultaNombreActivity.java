@@ -37,7 +37,7 @@ public class ConsultaNombreActivity extends Activity{
     public void onClickConsultar(View view) {
         text = edtNombre.getText().toString();
         if(text.matches("")){                                           //Si campo esta vacio, agregar texto no valido
-            text = "lol";
+            text = "";
         }
         articulo = consultaNombre.consultaNombre(text);
             if(articulo == null){                                             //Si el resultado del query esta vacio

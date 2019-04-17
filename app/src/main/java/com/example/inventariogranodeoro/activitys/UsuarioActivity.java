@@ -9,16 +9,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.Toolbar;
-
 import com.example.inventariogranodeoro.dao.ArticuloDAO;
 import com.example.inventariogranodeoro.entidades.Articulo;
 import com.example.inventariogranodeoro.Lista;
@@ -41,6 +35,7 @@ public class UsuarioActivity extends AppCompatActivity{
     private ImageButton btnNombre;
     private ImageButton btnCodigo;
     private ImageButton btnScan;
+    private ImageButton btnActualizar;
     private RecyclerView recyclerView;
 
     private int resultado;
@@ -75,6 +70,7 @@ public class UsuarioActivity extends AppCompatActivity{
         recyclerView.setAdapter(lista);
         btnNombre = findViewById(R.id.imgBtnAdd);
         btnCodigo = findViewById(R.id.imgBtnIdProduct);
+        btnActualizar= findViewById(R.id.imgBtnActualizar);
         //btnNombre = findViewById(R.id.btnNombreProducto);
         //btnCodigo = findViewById(R.id.btnIdProducto);
     }
@@ -120,44 +116,34 @@ public class UsuarioActivity extends AppCompatActivity{
         startActivityForResult(intent, 1);
     }
 
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.menu,menu);
-        return true;
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-            case R.id.opcion:{
-                AlertDialog.Builder dialogo_guardar = new AlertDialog.Builder(this);
-                dialogo_guardar.setTitle("Importante");
-                dialogo_guardar.setMessage("¿Desea actualizar las existencias?");
-                dialogo_guardar.setCancelable(false);
-                dialogo_guardar.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogo1, int id) {
-                        if(lista.getItemCount()>=0){
-                            for (int i = 0; i < lista.getItemCount(); i++) {
-                                resultado=guardarArticulo.guardarArticulo(lista.getArticulo(i).getIdProducto(), lista.getArticulo(i).getExistencia());
-                            }
-                            if(resultado==1){
-                                Toast.makeText(getApplicationContext(),"¡Base de Datos Actualizada!", Toast.LENGTH_SHORT).show();
-                            }else{
-                                Toast.makeText(getApplicationContext(),"¡No se logro subir lista!", Toast.LENGTH_SHORT).show();
-                            }
-                        }
+    public void onClickActualizar(View view) {
+        AlertDialog.Builder dialogo_guardar = new AlertDialog.Builder(this);
+        dialogo_guardar.setTitle("Importante");
+        dialogo_guardar.setMessage("¿Desea actualizar las existencias?");
+        dialogo_guardar.setCancelable(false);
+        dialogo_guardar.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+                if(lista.getItemCount()>=0){
+                    for (int i = 0; i < lista.getItemCount(); i++) {
+                        resultado=guardarArticulo.guardarArticulo(lista.getArticulo(i).getIdProducto(), lista.getArticulo(i).getExistencia());
                     }
-                });
-                dialogo_guardar.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogo1, int id) {
-
+                    if(resultado==1){
+                        Toast.makeText(getApplicationContext(),"¡Base de Datos Actualizada!", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(getApplicationContext(),"¡No se logro subir lista!", Toast.LENGTH_SHORT).show();
                     }
-                });
-                dialogo_guardar.show();
-                return true;
+                }
             }
-        }
-        return super.onOptionsItemSelected(item);
+        });
+        dialogo_guardar.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+
+            }
+        });
+        dialogo_guardar.show();
     }
+
+
     public void onBackPressed(){
         AlertDialog.Builder dialogo_salir = new AlertDialog.Builder(this);
         dialogo_salir.setTitle("Espera");
