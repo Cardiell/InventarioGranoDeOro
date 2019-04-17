@@ -19,6 +19,7 @@
         android:layout_marginBottom="50dp"
         android:background="@color/viewfinder_mask"
         android:gravity="center"
+        android:onClick="onClickGenerar"
         android:text="@string/generar"
         android:textColor="@color/Amarillo"
         android:textSize="24sp"
