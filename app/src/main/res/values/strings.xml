@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Inventario | Grano De Oro</string>
-    <string name="admin"><b>Administrador</b></string>
-    <string name="usuario"><b>Usuario Estándar</b></string>
+    <string name="admin">Administrador</string>
+    <string name="usuario">Usuario Estándar</string>
     <string name="pwd">Contraseña</string>
     <string name="iniciar">Iniciar Sesión</string>
     <string name="scan">Iniciar Sesión</string>

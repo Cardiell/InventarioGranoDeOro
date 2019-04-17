@@ -7,6 +7,10 @@
     android:background="@drawable/fondo"
     tools:context=".activitys.MainActivity">
 
+
+
+
+
     <LinearLayout
         android:id="@+id/LinearLayout_0"
         android:layout_width="match_parent"
@@ -16,19 +20,19 @@
 
         <ImageView
             android:id="@+id/imageView_logo"
-            android:layout_width="282dp"
-            android:layout_height="217dp"
-            android:adjustViewBounds="false"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
             android:background="@android:color/transparent"
             android:contentDescription="LogoEmpreza"
             app:srcCompat="@drawable/logogranodeoro" />
 
         <TextView
             android:id="@+id/lblAdmin"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:layout_marginBottom="10dp"
+            android:gravity="center"
             android:text="@string/admin"
             android:textColor="@color/Blanoco"
             android:textSize="20sp"
@@ -37,69 +41,66 @@
         <EditText
             android:id="@+id/txtUsername"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/edit_text_disenio"
             android:drawableLeft="@drawable/icono_user"
             android:drawablePadding="20dp"
             android:duplicateParentState="true"
-            android:ems="10"
-            android:hint="NOMBER"
+            android:hint="Nombre"
             android:inputType="textPersonName"
             android:paddingLeft="20dp"
             android:singleLine="false"
             android:textColor="@color/Blanoco"
             android:textColorHint="@color/Blanoco"
-            android:textSize="14sp"
+            android:textSize="15dp"
             tools:ignore="Autofill" />
 
         <EditText
             android:id="@+id/txtPassword"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/edit_text_disenio"
             android:drawableLeft="@drawable/icono_password"
             android:drawablePadding="20dp"
             android:ems="10"
-            android:hint="CONTRASEÑA"
+            android:hint="Contraseña"
             android:inputType="textPassword"
             android:paddingLeft="20dp"
             android:textColor="@color/Blanoco"
             android:textColorHint="@color/Blanoco"
-            android:textSize="14sp"
+            android:textSize="15dp"
             tools:ignore="Autofill" />
 
         <Button
             android:id="@+id/btnIniciar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/button_disenio"
             android:enabled="false"
             android:onClick="onClickLogin"
             android:text="@string/iniciar"
             android:textColor="@color/Blanoco"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/btnScan"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="10dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/button_disenio"
             android:onClick="onClickScan"
             android:text="Usuario Estandar"
             android:textColor="@color/Blanoco"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textSize="20dp" />
     </LinearLayout>
 </RelativeLayout>
