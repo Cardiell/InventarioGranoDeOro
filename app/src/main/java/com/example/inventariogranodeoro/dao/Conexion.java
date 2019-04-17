@@ -17,10 +17,10 @@ import java.sql.Statement;
  *                                                    *
  ******************************************************/
 public class Conexion{
-    private String IP = "192.168.1.234";
+    private String IP = "192.168.0.6";
     private String DB = "GDO";
     private String DBUser = "sa";
-    private String DBPWD = "12345";
+    private String DBPWD = "Ernesto5281";
 
     @SuppressLint("NewApi")
 

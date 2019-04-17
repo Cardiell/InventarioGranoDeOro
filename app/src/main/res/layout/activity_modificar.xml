@@ -55,10 +55,10 @@
             android:id="@+id/mnp"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:hint="1"
-            android:textSize="20sp"
             android:gravity="center"
-            android:inputType="numberDecimal" />
+            android:hint="@string/def1"
+            android:inputType="numberDecimal"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnModificar"

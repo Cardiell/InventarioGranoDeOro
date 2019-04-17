@@ -27,13 +27,12 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:backgroundTint="@color/VerdePrimario"
             android:ems="10"
             android:hint="@string/codigoProducto"
             android:inputType="text"
-            android:textSize="20dp"
             android:textColor="@color/VerdePrimario"
             android:textColorHint="@color/VerdePrimario"
+            android:textSize="18sp"
             tools:ignore="Autofill" />
 
         <Button
@@ -47,7 +46,7 @@
             android:onClick="onClickConsultar"
             android:text="@string/consultar"
             android:textColor="@color/BlancoSecuandario"
-            android:textSize="20dp"
+            android:textSize="18sp"
             android:textStyle="bold|italic" />
 
         <TextView
@@ -84,12 +83,10 @@
             android:id="@+id/np"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:hint="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:inputType="numberDecimal" />
+            android:hint="@string/def1"
+            android:inputType="numberDecimal"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btnAgregar"
@@ -102,7 +99,7 @@
             android:onClick="onClickAgregar"
             android:text="@string/agregar"
             android:textColor="@color/BlancoSecuandario"
-            android:textSize="20dp"
+            android:textSize="18sp"
             android:textStyle="bold|italic" />
     </LinearLayout>
 </RelativeLayout>

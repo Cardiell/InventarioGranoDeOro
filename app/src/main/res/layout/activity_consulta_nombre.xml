@@ -9,12 +9,18 @@
         android:id="@+id/LinearLayout_2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
         android:gravity="center"
         android:orientation="vertical"
         tools:ignore="UselessParent">
@@ -26,13 +32,12 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:backgroundTint="@color/VerdePrimario"
-            android:textSize="20dp"
             android:ems="10"
             android:hint="@string/nombreProducto"
             android:inputType="text"
             android:textColor="@color/VerdePrimario"
             android:textColorHint="@color/VerdePrimario"
+            android:textSize="18sp"
             tools:ignore="Autofill" />
 
         <Button
@@ -40,13 +45,13 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             android:background="@color/colorPrimary"
             android:onClick="onClickConsultar"
             android:text="@string/consultar"
-            android:layout_marginTop="10dp"
             android:textColor="@color/BlancoSecuandario"
-            android:textSize="20dp"
+            android:textSize="18sp"
             android:textStyle="bold|italic" />
 
         <TextView
@@ -83,12 +88,10 @@
             android:id="@+id/np"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:hint="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:inputType="numberDecimal" />
+            android:hint="@string/def1"
+            android:inputType="numberDecimal"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btnAgregar"
@@ -101,7 +104,7 @@
             android:onClick="onClickAgregar"
             android:text="@string/agregar"
             android:textColor="@color/BlancoSecuandario"
-            android:textSize="20dp"
+            android:textSize="18sp"
             android:textStyle="bold|italic" />
     </LinearLayout>
 </RelativeLayout>

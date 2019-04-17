@@ -9,7 +9,7 @@
     <string name="nombreProducto">Nombre de producto</string>
     <string name="idProducto">Código</string>
     <string name="scanner">Escanear</string>
- <!--   <string name="lista">Lista de productos:</string> -->
+    <!--   <string name="lista">Lista de productos:</string> -->
     <string name="consultar">Consultar</string>
     <string name="viewId"><b>Código: </b></string>
     <string name="viewNombre"><b>Nombre: </b></string>
@@ -19,9 +19,24 @@
     <string name="generar">Generar reporte</string>
     <string name="codigoProducto">Código de producto</string>
     <string name="cambiarExistencia">Ingresa nuevo valor de existencia</string>
-  <!--  <string name="eliminarProducto">Eliminar</string> -->
+    <!--  <string name="eliminarProducto">Eliminar</string> -->
     <string name="modificarProducto">Guardar</string>
     <string name="desc">Descripcion :V</string>
 
     <string name="IndicadorLista">Lista de productos</string>
+
+    <!-- Etiquetas -->
+    <string name="etiquetaNombre">Nombre</string>
+    <string name="etiquetaContrasenia">Contraseña</string>
+    <string name="etiquetaUsuarioEstandar">Usuario Estandar</string>
+
+    <!-- Descripciones -->
+    <string name="descLogo">Logotipo de la empresa</string>
+    <string name="descEscaner">Representa el agregar producto pormedio de escanear el codigo</string>
+    <string name="descCodigo">Representa el agregar producto pormedio de su codigo</string>
+    <string name="descNombre">Repesenta el agregar producto pormedio de su nombre</string>
+    <string name="descActualizar">Representa el boton de actualizar la bace de datos con la lista</string>
+
+    <!-- valores por defecto en los campos -->
+    <string name="def1">1</string>
 </resources>

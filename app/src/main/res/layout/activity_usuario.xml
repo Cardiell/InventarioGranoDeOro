@@ -10,8 +10,7 @@
         android:id="@+id/LinearLayout_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/LinearLayoutHorisontal_2"
@@ -30,6 +29,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:contentDescription="@string/descEscaner"
                 android:onClick="onClickScanner"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/scaner" />
@@ -43,6 +43,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:contentDescription="@string/descCodigo"
                 android:onClick="onClickCodigo"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/codigobarras" />
@@ -56,6 +57,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:contentDescription="@string/descNombre"
                 android:onClick="onClickNombre"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/agregar" />
@@ -69,9 +71,10 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:contentDescription="@string/descActualizar"
+                android:onClick="onClickActualizar"
                 android:padding="3dp"
                 android:scaleType="fitCenter"
-                android:onClick="onClickActualizar"
                 app:srcCompat="@drawable/actualizar" />
         </LinearLayout>
 
@@ -86,11 +89,10 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/IndicadorLista"
-                android:textColor="@color/AmarilloSecundario"
-                android:textSize="18dp"
+                android:textColor="@color/Blanoco"
+                android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -99,8 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:background="@color/viewfinder_mask"
- />
+            android:background="@color/viewfinder_mask" />
 
     </LinearLayout>
 
