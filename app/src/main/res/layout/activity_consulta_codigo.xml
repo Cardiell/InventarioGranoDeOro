@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/CremaSecundario"
     tools:context=".activitys.ConsultaCodigoActivity">
 
     <LinearLayout
@@ -32,6 +31,7 @@
             android:ems="10"
             android:hint="@string/codigoProducto"
             android:inputType="text"
+            android:textSize="20dp"
             android:textColor="@color/VerdePrimario"
             android:textColorHint="@color/VerdePrimario"
             tools:ignore="Autofill" />
@@ -41,12 +41,13 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
-            android:background="@android:color/transparent"
+            android:background="@color/colorPrimary"
             android:onClick="onClickConsultar"
             android:text="@string/consultar"
-            android:textColor="@color/RojoPrimario"
-            android:textSize="24sp"
+            android:textColor="@color/BlancoSecuandario"
+            android:textSize="20dp"
             android:textStyle="bold|italic" />
 
         <TextView
@@ -87,20 +88,21 @@
             android:layout_centerVertical="true"
             android:hint="1"
             android:gravity="center"
+            android:textSize="20dp"
             android:inputType="numberDecimal" />
 
         <Button
             android:id="@+id/btnAgregar"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@android:color/transparent"
+            android:background="@color/colorPrimary"
             android:enabled="false"
             android:onClick="onClickAgregar"
             android:text="@string/agregar"
-            android:textColor="@color/RojoPrimario"
-            android:textSize="24sp"
+            android:textColor="@color/BlancoSecuandario"
+            android:textSize="20dp"
             android:textStyle="bold|italic" />
     </LinearLayout>
 </RelativeLayout>

@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/CremaSecundario"
     tools:context=".activitys.ModificarActivity">
 
     <LinearLayout
@@ -59,6 +58,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:hint="1"
+            android:textSize="20dp"
             android:gravity="center"
             android:inputType="numberDecimal" />
 
@@ -68,11 +68,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@android:color/transparent"
+            android:background="@color/colorPrimary"
             android:onClick="onClickGuardar"
             android:text="@string/modificarProducto"
-            android:textColor="@color/RojoPrimario"
-            android:textSize="24sp"
+            android:textColor="@color/BlancoSecuandario"
+            android:textSize="20dp"
             android:textStyle="bold|italic" />
     </LinearLayout>
 </RelativeLayout>
