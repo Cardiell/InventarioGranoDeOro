@@ -56,7 +56,12 @@ public class ConsultaCodigoActivity extends Activity {
     /* Metodo para regresar los datos al Acitvity anterior en este caso UsuarioActivity */
 
     public void onClickAgregar(View view) {
-        articulo.setExistencia(Float.valueOf(np.getValue()));
+        if(!np.getText().toString().isEmpty()){
+            articulo.setExistencia(Float.valueOf(np.getText().toString()));
+        }
+        else{
+            articulo.setExistencia(Float.valueOf(np.getHint().toString()));
+        }
         Intent intent = new Intent();
         intent.putExtra("ARTICULO", articulo);
         setResult(RESULT_OK,intent);
@@ -73,9 +78,6 @@ public class ConsultaCodigoActivity extends Activity {
 
         //Seleccionador de cantidad de producto
         np = findViewById(R.id.np);
-        np.setMinValue(1);
-        np.setMaxValue(20);
-        np.setWrapSelectorWheel(true);
     }
 
     private EditText edtid;
@@ -83,6 +85,6 @@ public class ConsultaCodigoActivity extends Activity {
     private TextView txtId;
     private TextView txtNombre;
     private Button btnAgregar;
-    private NumberPicker np;
+    private  EditText  np;
 
 }

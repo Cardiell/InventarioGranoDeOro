@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,14 +36,16 @@ public class ConsultaScannerActivity extends Activity implements ZXingScannerVie
         txtId = findViewById(R.id.txtId);
         txtNombre = findViewById(R.id.txtNombre);
         np = findViewById(R.id.np);
-        np.setMinValue(1);
-        np.setMaxValue(20);
-        np.setWrapSelectorWheel(true);
 
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                articulo.setExistencia(Float.valueOf(np.getValue()));
+                if(!np.getText().toString().isEmpty()){
+                    articulo.setExistencia(Float.valueOf(np.getText().toString()));
+                }
+                else{
+                    articulo.setExistencia(Float.valueOf(np.getHint().toString()));
+                }
                 Intent intent = new Intent();
                 intent.putExtra("ARTICULO", articulo);
                 setResult(RESULT_OK,intent);
@@ -79,5 +82,5 @@ public class ConsultaScannerActivity extends Activity implements ZXingScannerVie
     private TextView txtNombre;
     private TextView txtId;
     private Button btnAgregar;
-    private NumberPicker np;
+    private EditText np;
 }

@@ -53,12 +53,14 @@
             android:textColor="@color/VerdePrimario"
             android:textSize="20sp" />
 
-        <NumberPicker
+        <EditText
             android:id="@+id/np"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:solidColor="@color/VerdePrimario" />
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:hint="1"
+            android:inputType="numberDecimal" />
 
         <Button
             android:id="@+id/btnAgregar"

@@ -54,7 +54,12 @@ public class ConsultaNombreActivity extends Activity{
 
     /* Metodo para regresar los datos al Acitvity anterior en este caso UsuarioActivity */
     public void onClickAgregar(View view) {
-        articulo.setExistencia(Float.valueOf(np.getValue()));
+        if(!np.getText().toString().isEmpty()){
+            articulo.setExistencia(Float.valueOf(np.getText().toString()));
+        }
+        else{
+            articulo.setExistencia(Float.valueOf(np.getHint().toString()));
+        }
         Intent intent = new Intent();
         intent.putExtra("ARTICULO", articulo);
         setResult(RESULT_OK,intent);
@@ -70,9 +75,6 @@ public class ConsultaNombreActivity extends Activity{
         txtId = findViewById(R.id.txtId);
         txtNombre = findViewById(R.id.txtNombre);
         np = findViewById(R.id.np);
-        np.setMinValue(1);
-        np.setMaxValue(20);
-        np.setWrapSelectorWheel(true);
     }
 
     private EditText edtNombre;
@@ -80,5 +82,5 @@ public class ConsultaNombreActivity extends Activity{
     private TextView txtNombre;
     private Button btnConsulta;
     private Button btnAgregar;
-    private NumberPicker np;
+    private EditText np;
 }
