@@ -14,11 +14,11 @@
     <string name="viewId"><b>Código: </b></string>
     <string name="viewNombre"><b>Nombre: </b></string>
     <string name="nombre">Nombre</string>
-    <string name="viewExistencia"><b>Elige una cantidad</b></string>
+    <string name="viewExistencia"><b>Ingresa cantidad</b></string>
     <string name="agregar">Agregar Producto</string>
     <string name="generar">Generar reporte</string>
     <string name="codigoProducto">Código de producto</string>
-    <string name="cambiarExistencia">Elige nuevo valor de existencia</string>
+    <string name="cambiarExistencia">Ingresa nuevo valor de existencia</string>
   <!--  <string name="eliminarProducto">Eliminar</string> -->
     <string name="modificarProducto">Guardar</string>
     <string name="desc">Descripcion :V</string>
