@@ -20,7 +20,7 @@ public class Conexion{
     private String IP = "192.168.1.69";
     private String DB = "GDO";
     private String DBUser = "sa";
-    private String DBPWD = "Ernesto5281";
+    private String DBPWD = "sqlserver";
 
     @SuppressLint("NewApi")
 

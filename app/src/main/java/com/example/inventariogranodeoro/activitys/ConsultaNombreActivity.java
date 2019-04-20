@@ -1,9 +1,11 @@
 package com.example.inventariogranodeoro.activitys;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +17,8 @@ import com.example.inventariogranodeoro.dao.ArticuloDAO;
 import com.example.inventariogranodeoro.entidades.Articulo;
 import com.example.inventariogranodeoro.R;
 
+import java.util.ArrayList;
+
 /* ****************************************************
  *                                                    *
  *   ACTIVIDAD PARA CONSULTAR PRODUCTOS POR NOMBRE    *
@@ -25,6 +29,8 @@ public class ConsultaNombreActivity extends Activity{
     String text;
     ArticuloDAO consultaNombre;
     Articulo articulo;
+    ArrayList<String> lista=new ArrayList();
+    String part1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,17 +45,41 @@ public class ConsultaNombreActivity extends Activity{
         if(text.matches("")){                                           //Si campo esta vacio, agregar texto no valido
             text = "";
         }
-        articulo = consultaNombre.consultaNombre(text);
-            if(articulo == null){                                             //Si el resultado del query esta vacio
-                btnAgregar.setEnabled(false);
-                txtId.setText(String.format("Código:"));
-                txtNombre.setText(String.format("Nombre:"));
-                Toast.makeText(getApplicationContext(),"El articulo: "+text+"\nNo esta disponible", Toast.LENGTH_LONG).show();
-            }else{
-                txtId.setText(String.format("Código: ").concat(articulo.getIdProducto()));
-                txtNombre.setText(String.format("Código: ").concat(articulo.getNombre()));
-                btnAgregar.setEnabled(true);
-            }
+        lista = consultaNombre.consultaNombre2(text);
+        if(lista == null){                                             //Si el resultado del query esta vacio
+            btnAgregar.setEnabled(false);
+            txtId.setText(String.format("Código:"));
+            txtNombre.setText(String.format("Nombre:"));
+            Toast.makeText(getApplicationContext(),"El articulo: "+text+"\nNo esta disponible", Toast.LENGTH_LONG).show();
+        }else if(lista.size()>1){
+
+            this .lista=lista;
+            String[] simpleArray = new String[lista.size()];
+            simpleArray = lista.toArray(simpleArray);
+            final String[] items=simpleArray;
+            AlertDialog.Builder builder =
+                    new AlertDialog.Builder(this);
+
+            builder.setTitle("Selección")
+                    .setItems(items, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int item) {
+
+                            String[] parts = items[item].split(" ", 2);
+                            part1 = parts[0];
+                            articulo=consultaNombre.consultaNombre(parts[1]);
+                            txtId.setText(String.format("Código: ").concat(articulo.getIdProducto()));
+                            txtNombre.setText(String.format("Nombre: ").concat(articulo.getNombre()));
+                            btnAgregar.setEnabled(true);
+                        }});
+
+            builder.show();
+        }else{
+            String[] parts = lista.get(0).split(" ", 2);
+            articulo=consultaNombre.consultaNombre(parts[1]);
+            txtId.setText(String.format("Código: ").concat(articulo.getIdProducto()));
+            txtNombre.setText(String.format("Nombre: ").concat(articulo.getNombre()));
+            btnAgregar.setEnabled(true);
+        }
     }
 
     /* Metodo para regresar los datos al Acitvity anterior en este caso UsuarioActivity */
