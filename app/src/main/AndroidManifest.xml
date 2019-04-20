@@ -17,11 +17,11 @@
         android:fullBackupContent="@xml/backup_descriptor">
         <activity android:name=".activitys.ModificarActivity"
             android:theme="@style/Theme.AppCompat.DayNight.Dialog"></activity>
-        <activity android:name=".activitys.ConsultaScannerActivity" />
+        <activity android:name=".activitys.ConsultaScannerActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog"></activity>
         <activity android:name=".activitys.ConsultaCodigoActivity"
             android:theme="@style/Theme.AppCompat.DayNight.Dialog"></activity>
-        <activity android:name=".activitys.AdministradorActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.Dialog"></activity>
+        <activity android:name=".activitys.AdministradorActivity"></activity>
         <activity android:name=".activitys.ConsultaNombreActivity"
             android:theme="@style/Theme.AppCompat.DayNight.Dialog"></activity>
         <activity android:name=".activitys.UsuarioActivity" />
