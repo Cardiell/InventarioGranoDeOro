@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    android:background="@drawable/border"
+    android:background="@drawable/custom_divisor"
     android:baselineAligned="false"
+    android:filterTouchesWhenObscured="true"
     android:gravity="end"
     android:orientation="horizontal"
     android:weightSum="1">
@@ -35,7 +35,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
             android:gravity="left"
-            android:textColor="@color/Amarillo"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold|italic"
             tools:ignore="RtlHardcoded" />
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="8dp"
             android:gravity="left"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -60,12 +60,12 @@
 
         <ImageButton
             android:id="@+id/updateProduct"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription="@string/desc"
-            android:padding="10dp"
+            android:padding="5dp"
             android:scaleType="fitCenter"
             android:src="@drawable/pencil" />
 
@@ -73,6 +73,8 @@
             android:id="@+id/deleteProduct"
             android:layout_width="50dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription="@string/desc"

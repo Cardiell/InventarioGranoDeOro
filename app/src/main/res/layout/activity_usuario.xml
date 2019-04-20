@@ -4,104 +4,149 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Blanoco"
     tools:context=".activitys.UsuarioActivity">
 
     <LinearLayout
         android:id="@+id/LinearLayout_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/LinearLayoutHorisontal_2"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/colorPrimary"
-            android:gravity="bottom"
-            android:orientation="horizontal">
+            android:layout_height="100dp"
+            android:background="@drawable/custom_barramenu"
+            android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/imgBtnScanner"
-                android:layout_width="65dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/descEscaner"
-                android:onClick="onClickScanner"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/scaner" />
-
-            <ImageButton
-                android:id="@+id/imgBtnIdProduct"
-                android:layout_width="65dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/descCodigo"
-                android:onClick="onClickCodigo"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/codigobarras" />
-
-            <ImageButton
-                android:id="@+id/imgBtnAdd"
-                android:layout_width="65dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/descNombre"
-                android:onClick="onClickNombre"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/agregar" />
-
-            <ImageButton
-                android:id="@+id/imgBtnActualizar"
-                android:layout_width="65dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/descActualizar"
-                android:onClick="onClickActualizar"
-                android:padding="3dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/actualizar" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/colorPrimary"
-            android:gravity="bottom"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView3"
+            <LinearLayout
+                android:id="@+id/LinearLayoutHorisontal_2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/IndicadorLista"
-                android:textColor="@color/Blanoco"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:padding="8dp"
+                    app:srcCompat="?attr/homeAsUpIndicator" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnScanner"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/descEscaner"
+                    android:onClick="onClickScanner"
+                    android:padding="2dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/scaner" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnIdProduct"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/descCodigo"
+                    android:onClick="onClickCodigo"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/codigobarras" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnAdd"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/descNombre"
+                    android:onClick="onClickNombre"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/agregar" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnActualizar"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/descActualizar"
+                    android:onClick="onClickActualizar"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/actualizar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="top|left"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/IndicadorLista"
+                    android:textColor="@color/textUser"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/updateProduct"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:padding="8dp"
+                    android:scaleType="fitStart"
+                    app:srcCompat="@drawable/pencil" />
+
+                <ImageButton
+                    android:id="@+id/deleteProduct"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:padding="10dp"
+                    android:scaleType="fitStart"
+                    app:srcCompat="@drawable/x" />
+            </LinearLayout>
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvLista"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:background="@color/viewfinder_mask" />
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/transparent" />
 
     </LinearLayout>
 

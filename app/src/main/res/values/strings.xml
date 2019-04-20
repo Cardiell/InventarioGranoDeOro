@@ -29,6 +29,7 @@
     <string name="etiquetaNombre">Nombre</string>
     <string name="etiquetaContrasenia">Contraseña</string>
     <string name="etiquetaUsuarioEstandar">Usuario Estandar</string>
+    <string name="etiquetaLimiarLista">Limiar Lista</string>
 
     <!-- Descripciones -->
     <string name="descLogo">Logotipo de la empresa</string>

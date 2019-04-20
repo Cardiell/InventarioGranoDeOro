@@ -27,4 +27,47 @@
     <color name="Creama">#F1EAA2</color>
     <color name="CremaPrimario">#F9F999</color>
     <color name="CremaSecundario">#F5F7C5</color>
+
+    <color name="transparenciaNegra">#90000000</color>
+
+    <!-- _______________________ Nueva Interfas Sensilla _______________________ -->
+    <!-- Interfas Login -->
+    <color name="fondoLogin">#eeeeee</color>
+
+    <color name="fondoBotonPrim">#178fbb</color>
+    <!-- <color name="bordeBoton">#178fbb</color> -->
+    <!-- <color name="letraBoton">#ffffff</color> definido en @android:color -->
+
+    <color name="fondoBotonSec">#333333</color>
+    <!-- <color name="bordeBotonSec">#333333</color> -->
+    <!-- <color name="letraBoton">#ffffff</color> definido en @android:color -->
+
+    <!-- <color name="findoEditText">#ffffff</color> definido en @android:color -->
+    <color name="bordeEditText">#cccccc</color>
+    <!-- <color name="letraEditText">#000000</color> definido en @android:color -->
+
+    <!-- Interfas User -->
+    <color name="fondoUser">#EEEEEE</color>
+    <color name="fondoIniUser">#919391</color>
+    <color name="fondoFinUser">#a5a7a5</color>
+
+    <!-- <color name="textUser">#428fbb</color> -->
+    <color name="textUser">#FFFFFF</color>
+    <!--
+    <color name="fondoIniBarra">#cccccc</color>
+    <color name="fondoFinBarra">#b8b8b8</color> -->
+    <color name="fondoIniBarra">#122641</color>
+    <color name="fondoFinBarra">#1d3c65</color>
+
+    <color name="colorIcon">#178fbb</color>
+    <!--
+    <color name="fondoDiv">#d6d6d6</color>
+    <color name="sombraDiv">#f7f7f7</color> -->
+    <color name="fondoDiv">#1d3c65</color>
+    <color name="sombraDiv">#aab6c5</color>
+
+    <!-- Consultas para agregar y Modificasion -->
+    <color name="textColor">#000000</color>
+    <color name="buttonConsulta">#000000</color>
+    <color name="bordeButoonConsulta">#000000</color>
 </resources>

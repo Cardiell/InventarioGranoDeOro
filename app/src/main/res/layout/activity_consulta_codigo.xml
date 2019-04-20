@@ -3,19 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context=".activitys.ConsultaCodigoActivity">
 
     <LinearLayout
         android:id="@+id/LinearLayout_3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_items"
         android:gravity="center"
         android:orientation="vertical"
         tools:ignore="UselessParent">
@@ -23,15 +18,17 @@
         <EditText
             android:id="@+id/edtCProducto"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/custom_buttonsec"
             android:ems="10"
             android:hint="@string/codigoProducto"
             android:inputType="text"
-            android:textColor="@color/VerdePrimario"
-            android:textColorHint="@color/VerdePrimario"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
             android:textSize="18sp"
             tools:ignore="Autofill" />
 
@@ -42,7 +39,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/buttonConsulta"
             android:onClick="onClickConsultar"
             android:text="@string/consultar"
             android:textColor="@color/BlancoSecuandario"
@@ -56,7 +53,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:text="@string/viewId"
-            android:textColor="@color/VerdePrimario"
+            android:textColor="@color/textColor"
             android:textSize="20sp" />
 
         <TextView
@@ -66,7 +63,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:text="@string/viewNombre"
-            android:textColor="@color/VerdePrimario"
+            android:textColor="@color/textColor"
             android:textSize="20sp" />
 
         <TextView
@@ -76,7 +73,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="@string/viewExistencia"
-            android:textColor="@color/VerdePrimario"
+            android:textColor="@color/textColor"
             android:textSize="20sp" />
 
         <EditText
@@ -93,8 +90,8 @@
             android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary"
+            android:layout_margin="10dp"
+            android:background="@color/buttonConsulta"
             android:enabled="false"
             android:onClick="onClickAgregar"
             android:text="@string/agregar"

@@ -3,18 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:theme="@style/AlertDialog.AppCompat.Light"
     tools:context=".activitys.ModificarActivity">
 
     <LinearLayout
         android:id="@+id/LinearLayout_2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_items"
         android:gravity="center"
         android:orientation="vertical"
         tools:ignore="UselessParent">
@@ -22,23 +19,25 @@
         <TextView
             android:id="@+id/mtxtId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_height="50dp"
+            android:drawableStart="@drawable/codigobarras"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
             android:text="@string/viewId"
-            android:textColor="@color/VerdePrimario"
+            android:textColor="@color/textColor"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/mtxtNombre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
             android:text="@string/viewNombre"
-            android:textColor="@color/VerdePrimario"
+            android:textColor="@color/textColor"
             android:textSize="20sp" />
 
         <TextView
@@ -48,7 +47,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="@string/cambiarExistencia"
-            android:textColor="@color/VerdePrimario"
+            android:textColor="@color/textColor"
             android:textSize="20sp" />
 
         <EditText
@@ -65,8 +64,8 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary"
+            android:layout_margin="10dp"
+            android:background="@color/buttonConsulta"
             android:onClick="onClickGuardar"
             android:text="@string/modificarProducto"
             android:textColor="@color/BlancoSecuandario"
