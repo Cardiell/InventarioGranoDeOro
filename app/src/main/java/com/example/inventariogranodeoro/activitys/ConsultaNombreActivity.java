@@ -46,7 +46,7 @@ public class ConsultaNombreActivity extends Activity{
             text = "";
         }
         lista = consultaNombre.consultaNombre2(text);
-        if(lista == null){                                             //Si el resultado del query esta vacio
+        if(lista.size()<1){                                             //Si el resultado del query esta vacio
             btnAgregar.setEnabled(false);
             txtId.setText(String.format("Código:"));
             txtNombre.setText(String.format("Nombre:"));
