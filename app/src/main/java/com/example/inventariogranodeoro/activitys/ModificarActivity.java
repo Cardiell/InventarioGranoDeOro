@@ -32,7 +32,7 @@ public class ModificarActivity extends Activity{
         txtId = findViewById(R.id.mtxtId);
         txtNombre = findViewById(R.id.mtxtNombre);
         txtId.setText(String.format("Código: ").concat(articulo.getIdProducto()));
-        txtNombre.setText(String.format("Código: ").concat(articulo.getNombre()));
+        txtNombre.setText(String.format("Nombre: ").concat(articulo.getNombre()));
         np = findViewById(R.id.mnp);
     }
 

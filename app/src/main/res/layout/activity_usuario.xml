@@ -26,68 +26,78 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/LinearLayoutHorisontal_2"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/custom_barramenu"
-            android:gravity="right"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutHorisontal_2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imgBtnScanner"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/descEscaner"
+                    android:onClick="onClickScanner"
+                    android:padding="2dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/scaner" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnIdProduct"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/descCodigo"
+                    android:onClick="onClickCodigo"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/codigobarras" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnAdd"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/descNombre"
+                    android:onClick="onClickNombre"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/agregar" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnActualizar"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/descActualizar"
+                    android:onClick="onClickActualizar"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/actualizar" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
                 android:layout_gravity="top|left"
-                android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/IndicadorLista"
                 android:textColor="@color/textUser"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <ImageButton
-                android:id="@+id/imgBtnScanner"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/descEscaner"
-                android:onClick="onClickScanner"
-                android:padding="2dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/scaner" />
-
-            <ImageButton
-                android:id="@+id/imgBtnIdProduct"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/descCodigo"
-                android:onClick="onClickCodigo"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/codigobarras" />
-
-            <ImageButton
-                android:id="@+id/imgBtnAdd"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/descNombre"
-                android:onClick="onClickNombre"
-                android:padding="12dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/agregar" />
-
-            <ImageButton
-                android:id="@+id/imgBtnActualizar"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/descActualizar"
-                android:onClick="onClickActualizar"
-                android:padding="12dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/actualizar" />
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView

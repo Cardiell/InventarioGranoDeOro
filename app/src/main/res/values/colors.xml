@@ -7,8 +7,6 @@
     <color name="Verde">#004025</color>
     <color name="VerdePrimario">#0E7F40</color>
     <color name="VerdeSecundario">#3cb64b</color>
-    <color name="Verde1">#2e7d32</color>
-
 
     <color name="Blanoco">#FFFFFF</color>
     <color name="BlancoPrimario">#E3E4E5</color>
@@ -16,9 +14,9 @@
 
     <color name="Rojo">#7C0A00</color>
     <color name="RojoPrimario">#EF242D</color>
-    <color name="RojoSecundario">#db5d20</color>
 
-    <color name="Anaranjado">#f7931e</color>
+    <color name="Anaranjado">#db5d20</color>
+    <color name="AnaranjadoPrimario">#f7931e</color>
 
     <color name="Amarillo">#FFD600</color>
     <color name="AmarilloPrimario">#fdd500</color>
@@ -48,8 +46,8 @@
 
     <!-- Interfas User -->
     <color name="fondoUser">#EEEEEE</color>
-    <color name="fondoIniUser">#919391</color>
-    <color name="fondoFinUser">#a5a7a5</color>
+    <color name="fondoIniUser">#6eb9d4</color>
+    <color name="fondoFinUser">#a8d5e5</color>
 
     <!-- <color name="textUser">#428fbb</color> -->
     <color name="textUser">#FFFFFF</color>
