@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDark">566d8c</color>
     <color name="colorAccent">#D81B60</color>
 
     <color name="Verde">#004025</color>
@@ -54,8 +54,8 @@
     <!--
     <color name="fondoIniBarra">#cccccc</color>
     <color name="fondoFinBarra">#b8b8b8</color> -->
-    <color name="fondoIniBarra">#122641</color>
-    <color name="fondoFinBarra">#1d3c65</color>
+    <color name="fondoIniBarra">#395478</color>
+    <color name="fondoFinBarra">#566d8c</color>
 
     <color name="colorIcon">#178fbb</color>
     <!--

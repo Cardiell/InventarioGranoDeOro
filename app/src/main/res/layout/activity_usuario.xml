@@ -46,7 +46,7 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/descEscaner"
                     android:onClick="onClickScanner"
-                    android:padding="2dp"
+                    android:padding="7dp"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/scaner" />
 
@@ -58,7 +58,7 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/descCodigo"
                     android:onClick="onClickCodigo"
-                    android:padding="10dp"
+                    android:padding="15dp"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/codigobarras" />
 
@@ -70,7 +70,7 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/descNombre"
                     android:onClick="onClickNombre"
-                    android:padding="12dp"
+                    android:padding="17dp"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/agregar" />
 
@@ -82,7 +82,7 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/descActualizar"
                     android:onClick="onClickActualizar"
-                    android:padding="12dp"
+                    android:padding="17dp"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/actualizar" />
             </LinearLayout>

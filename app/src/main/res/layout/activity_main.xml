@@ -15,14 +15,6 @@
         android:background="@android:color/transparent"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/descLogo"
-            app:srcCompat="@drawable/logogranodeoro" />
-
         <TextView
             android:id="@+id/lblAdmin"
             android:layout_width="match_parent"
@@ -88,6 +80,14 @@
             android:text="@string/iniciar"
             android:textColor="@color/Blanoco"
             android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/descLogo"
+            app:srcCompat="@drawable/logogranodeoro" />
 
         <Button
             android:id="@+id/btnScan"
