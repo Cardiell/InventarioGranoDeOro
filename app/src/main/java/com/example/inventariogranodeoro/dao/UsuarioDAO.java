@@ -1,7 +1,6 @@
 package com.example.inventariogranodeoro.dao;
 
 import com.example.inventariogranodeoro.entidades.Usuario;
-
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;

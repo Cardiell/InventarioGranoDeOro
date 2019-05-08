@@ -1,7 +1,6 @@
 package com.example.inventariogranodeoro.activitys;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +8,7 @@ import android.widget.Toast;
 
 import com.example.inventariogranodeoro.R;
 import com.example.inventariogranodeoro.dao.ArchivoDAO;
-import com.example.inventariogranodeoro.dao.Conexion;
 
-import java.sql.Connection;
 
 public class AdministradorActivity extends Activity {
     @Override

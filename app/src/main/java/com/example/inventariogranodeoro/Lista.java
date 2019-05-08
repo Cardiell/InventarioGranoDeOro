@@ -20,14 +20,12 @@ import com.example.inventariogranodeoro.activitys.UsuarioActivity;
 import com.example.inventariogranodeoro.entidades.Articulo;
 import java.util.ArrayList;
 
-interface CustomItemClickListener{
-    public void onItemClick(View v, int position);
-}
-
 public class Lista extends RecyclerView.Adapter<Lista.MyViewHolder>{
-    private ArrayList<Articulo> articulos = new ArrayList<Articulo>();
+
+    public static ArrayList<Articulo> articulos = new ArrayList<Articulo>();
     private UsuarioActivity user;
     CustomItemClickListener listener;
+
     public Lista(UsuarioActivity u){
         user = u;
     }

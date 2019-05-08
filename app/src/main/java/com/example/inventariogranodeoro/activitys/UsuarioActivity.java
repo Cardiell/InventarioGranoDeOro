@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,11 @@ import com.example.inventariogranodeoro.dao.ArticuloDAO;
 import com.example.inventariogranodeoro.entidades.Articulo;
 import com.example.inventariogranodeoro.Lista;
 import com.example.inventariogranodeoro.R;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.List;
 
 /* ****************************************************
  *                                                    *
@@ -28,39 +34,27 @@ import com.example.inventariogranodeoro.R;
  *                                                    *
  ******************************************************/
 public class UsuarioActivity extends AppCompatActivity{
+
+    private SharedPreferences sharedPreferences;
     private int index;
-    private Lista lista;
-    private RecyclerView.LayoutManager layoutManager;
-
-    private ImageButton btnNombre;
-    private ImageButton btnCodigo;
-    private ImageButton btnScan;
-    private ImageButton btnActualizar;
-    private RecyclerView recyclerView;
-
     private int resultado;
-    private Toolbar toolbar;
-    ArticuloDAO guardarArticulo=new ArticuloDAO();
+    Lista lista;
+    ArticuloDAO guardarArticulo = new ArticuloDAO();
 
-
-    /*
-    private Button btnNombre;
-    private Button btnCodigo;
-    private Button btnScan;
-    private RecyclerView recyclerView;
-    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario);
+        sharedPreferences = getSharedPreferences("USER",MODE_PRIVATE);
         initComponents();
+
     }
 
     private void initComponents(){
         lista = new Lista(this);
-        //lista.addProducto(new Articulo("123", "EJEMPLO", 45));
+        leerValor("key");
         recyclerView = findViewById(R.id.rvLista);
         recyclerView.setHasFixedSize(true);
         // use a linear layout manager
@@ -71,9 +65,44 @@ public class UsuarioActivity extends AppCompatActivity{
         btnNombre = findViewById(R.id.imgBtnAdd);
         btnCodigo = findViewById(R.id.imgBtnIdProduct);
         btnActualizar= findViewById(R.id.imgBtnActualizar);
-        //btnNombre = findViewById(R.id.btnNombreProducto);
-        //btnCodigo = findViewById(R.id.btnIdProducto);
     }
+    private void leerValor(String key){
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString(key, "");
+        if (json.isEmpty()) {
+            System.out.println("ERRORRR...");
+        } else {
+            Type type = new TypeToken<List<Articulo>>() {
+            }.getType();
+            Lista.articulos = gson.fromJson(json, type);
+        }
+    }
+
+    private String getJson(){
+        Gson gson = new Gson();
+        return gson.toJson(Lista.articulos);
+    }
+
+    private void guardarValor(String key,String json){
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(key,json );
+        editor.commit();
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        guardarValor("key",getJson());
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        Lista.articulos.clear();
+        guardarValor("key","");
+
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -85,10 +114,8 @@ public class UsuarioActivity extends AppCompatActivity{
         }
         if(requestCode == 2){
             if(resultCode == Activity.RESULT_OK){
-                //Toast.makeText(getApplicationContext(),"Modificado", Toast.LENGTH_LONG).show();
                 Articulo art = (Articulo) data.getSerializableExtra("ART");
                 lista.modify(index, art);
-                System.out.println("modifica");
             }
         }
     }
@@ -129,8 +156,11 @@ public class UsuarioActivity extends AppCompatActivity{
                     }
                     if(resultado==1){
                         Toast.makeText(getApplicationContext(),"¡Base de Datos Actualizada!", Toast.LENGTH_SHORT).show();
+                        finish();
                     }else{
                         Toast.makeText(getApplicationContext(),"¡No se logro subir lista!", Toast.LENGTH_SHORT).show();
+                        guardarValor("key",getJson());
+                        System.exit(0);
                     }
                 }
             }
@@ -164,4 +194,12 @@ public class UsuarioActivity extends AppCompatActivity{
     public void aceptar(){
         super.onBackPressed();
     }
+
+    private ImageButton btnNombre;
+    private ImageButton btnCodigo;
+    private ImageButton btnScan;
+    private ImageButton btnActualizar;
+    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView recyclerView;
+    private Toolbar toolbar;
 }

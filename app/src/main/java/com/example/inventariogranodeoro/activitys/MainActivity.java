@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.example.inventariogranodeoro.dao.Conexion;
 import com.example.inventariogranodeoro.dao.UsuarioDAO;
 import com.example.inventariogranodeoro.permisos.CamaraPermisos;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         new CamaraPermisos().solicitarPermisos(this);
         initComponents(); // Simulacion de Java al agregar todos los componentes en un inicializador

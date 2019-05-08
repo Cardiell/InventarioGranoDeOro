@@ -2,12 +2,10 @@ package com.example.inventariogranodeoro.activitys;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.inventariogranodeoro.dao.ArticuloDAO;
@@ -25,7 +23,7 @@ public class ConsultaScannerActivity extends Activity implements ZXingScannerVie
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consulta_scanner);
         scaner();
