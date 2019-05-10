@@ -34,7 +34,8 @@
             android:layout_margin="50dp"
             android:background="@drawable/custom_button"
             android:padding="10dp"
-            android:text="@string/etiquetaLimiarLista"
+            android:text="Ajustar a Cero"
+            android:onClick="onClickLimpiar"
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:textStyle="bold|italic" />
