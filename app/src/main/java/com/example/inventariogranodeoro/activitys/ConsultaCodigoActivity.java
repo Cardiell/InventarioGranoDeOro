@@ -45,7 +45,7 @@ public class ConsultaCodigoActivity extends Activity {
             Toast.makeText(getApplicationContext(),"El articulo: "+text+"\nNo esta disponible", Toast.LENGTH_LONG).show();
         }else{
             txtId.setText(String.format("Código: ").concat(articulo.getIdProducto()));
-            txtNombre.setText(String.format("Código: ").concat(articulo.getNombre()));
+            txtNombre.setText(String.format("Nombre: ").concat(articulo.getNombre()));
             btnAgregar.setEnabled(true);
         }
 
