@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             if(login.consultaUsuario(user,pass) == null){ //Si el resultado del query es nulo
                 Toast.makeText(getApplicationContext(),"Datos incorrectos.", Toast.LENGTH_LONG).show();
             }else{
+                txtpassword.setText("");
                 Intent intent = new Intent(this, AdministradorActivity.class);
                 startActivity(intent);
             }
