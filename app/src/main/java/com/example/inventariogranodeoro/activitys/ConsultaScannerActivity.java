@@ -73,7 +73,7 @@ public class ConsultaScannerActivity extends Activity implements ZXingScannerVie
             finish();
         } else {
             txtId.setText(String.format("Código: ").concat(articulo.getIdProducto()));
-            txtNombre.setText(String.format("Código: ").concat(articulo.getNombre()));
+            txtNombre.setText(String.format("Nombre: ").concat(articulo.getNombre()));
         }
     }
 
